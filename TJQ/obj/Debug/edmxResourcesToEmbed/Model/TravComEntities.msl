@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TravComModelStoreContainer" CdmEntityContainer="TravComEntities">
+    <EntitySetMapping Name="APInvoices">
+      <EntityTypeMapping TypeName="TravComModel.APInvoices">
+        <MappingFragment StoreEntitySet="APInvoices">
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="ARInvoiceID" ColumnName="ARInvoiceID" />
+          <ScalarProperty Name="ARInvoiceDetailID" ColumnName="ARInvoiceDetailID" />
+          <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="BranchNumber" ColumnName="BranchNumber" />
+          <ScalarProperty Name="ProfileNumber" ColumnName="ProfileNumber" />
+          <ScalarProperty Name="ProfileName" ColumnName="ProfileName" />
+          <ScalarProperty Name="ProfileAddress" ColumnName="ProfileAddress" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="PostingMonth" ColumnName="PostingMonth" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+          <ScalarProperty Name="VatAmount" ColumnName="VatAmount" />
+          <ScalarProperty Name="PstAmount" ColumnName="PstAmount" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="VatCode" ColumnName="VatCode" />
+          <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+          <ScalarProperty Name="PayableAccount" ColumnName="PayableAccount" />
+          <ScalarProperty Name="OnHold" ColumnName="OnHold" />
+          <ScalarProperty Name="MarkToPay" ColumnName="MarkToPay" />
+          <ScalarProperty Name="AmountToPay" ColumnName="AmountToPay" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="TicketNumber" ColumnName="TicketNumber" />
+          <ScalarProperty Name="InvoiceGroup" ColumnName="InvoiceGroup" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ARInvoiceBalances">
+      <EntityTypeMapping TypeName="TravComModel.ARInvoiceBalances">
+        <MappingFragment StoreEntitySet="ARInvoiceBalances">
+          <ScalarProperty Name="InvoiceBalanceID" ColumnName="InvoiceBalanceID" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+          <ScalarProperty Name="VatAmount" ColumnName="VatAmount" />
+          <ScalarProperty Name="PstAmount" ColumnName="PstAmount" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+          <ScalarProperty Name="ReceivableAccount" ColumnName="ReceivableAccount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ARInvoiceDetails">
+      <EntityTypeMapping TypeName="TravComModel.ARInvoiceDetails">
+        <MappingFragment StoreEntitySet="ARInvoiceDetails">
+          <ScalarProperty Name="InvoiceDetailID" ColumnName="InvoiceDetailID" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="PostingMonth" ColumnName="PostingMonth" />
+          <ScalarProperty Name="SubmitTo" ColumnName="SubmitTo" />
+          <ScalarProperty Name="VendorNumber" ColumnName="VendorNumber" />
+          <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+          <ScalarProperty Name="VendorAddress" ColumnName="VendorAddress" />
+          <ScalarProperty Name="VendorPhone" ColumnName="VendorPhone" />
+          <ScalarProperty Name="VendorFax" ColumnName="VendorFax" />
+          <ScalarProperty Name="VendorEmail" ColumnName="VendorEmail" />
+          <ScalarProperty Name="ChainCode" ColumnName="ChainCode" />
+          <ScalarProperty Name="PropertyCode" ColumnName="PropertyCode" />
+          <ScalarProperty Name="CommissionClientNumber" ColumnName="CommissionClientNumber" />
+          <ScalarProperty Name="AgencyCCVendorNumber" ColumnName="AgencyCCVendorNumber" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="VatCode" ColumnName="VatCode" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="PassengerName" ColumnName="PassengerName" />
+          <ScalarProperty Name="ValidatingCarrier" ColumnName="ValidatingCarrier" />
+          <ScalarProperty Name="TicketNumber" ColumnName="TicketNumber" />
+          <ScalarProperty Name="ETicket" ColumnName="ETicket" />
+          <ScalarProperty Name="Exchange" ColumnName="Exchange" />
+          <ScalarProperty Name="ADM" ColumnName="ADM" />
+          <ScalarProperty Name="OriginalTicket" ColumnName="OriginalTicket" />
+          <ScalarProperty Name="OriginalInvoice" ColumnName="OriginalInvoice" />
+          <ScalarProperty Name="PublishedFare" ColumnName="PublishedFare" />
+          <ScalarProperty Name="SellingFare" ColumnName="SellingFare" />
+          <ScalarProperty Name="ReferenceFare" ColumnName="ReferenceFare" />
+          <ScalarProperty Name="LowFare" ColumnName="LowFare" />
+          <ScalarProperty Name="Tax1" ColumnName="Tax1" />
+          <ScalarProperty Name="Tax2" ColumnName="Tax2" />
+          <ScalarProperty Name="Tax3" ColumnName="Tax3" />
+          <ScalarProperty Name="Tax4" ColumnName="Tax4" />
+          <ScalarProperty Name="Penalty" ColumnName="Penalty" />
+          <ScalarProperty Name="GrossAmount" ColumnName="GrossAmount" />
+          <ScalarProperty Name="CommissionAmount" ColumnName="CommissionAmount" />
+          <ScalarProperty Name="VatOnCommission" ColumnName="VatOnCommission" />
+          <ScalarProperty Name="PstOnCommission" ColumnName="PstOnCommission" />
+          <ScalarProperty Name="PenaltyCommission" ColumnName="PenaltyCommission" />
+          <ScalarProperty Name="NetFare" ColumnName="NetFare" />
+          <ScalarProperty Name="NetFareValueCode" ColumnName="NetFareValueCode" />
+          <ScalarProperty Name="BookingAgentCommission" ColumnName="BookingAgentCommission" />
+          <ScalarProperty Name="TicketingAgentCommission" ColumnName="TicketingAgentCommission" />
+          <ScalarProperty Name="OSAgentCommission1" ColumnName="OSAgentCommission1" />
+          <ScalarProperty Name="OSAgentCommission2" ColumnName="OSAgentCommission2" />
+          <ScalarProperty Name="International" ColumnName="International" />
+          <ScalarProperty Name="ExceptionCode" ColumnName="ExceptionCode" />
+          <ScalarProperty Name="GSANumber" ColumnName="GSANumber" />
+          <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
+          <ScalarProperty Name="FreeFieldA" ColumnName="FreeFieldA" />
+          <ScalarProperty Name="FreeFieldB" ColumnName="FreeFieldB" />
+          <ScalarProperty Name="FreeFieldC" ColumnName="FreeFieldC" />
+          <ScalarProperty Name="FreeFieldD" ColumnName="FreeFieldD" />
+          <ScalarProperty Name="RoutingCode" ColumnName="RoutingCode" />
+          <ScalarProperty Name="TourCode" ColumnName="TourCode" />
+          <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+          <ScalarProperty Name="TransactionCode" ColumnName="TransactionCode" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="TravelDate" ColumnName="TravelDate" />
+          <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+          <ScalarProperty Name="NumberOfDays" ColumnName="NumberOfDays" />
+          <ScalarProperty Name="NumberOfPassengers" ColumnName="NumberOfPassengers" />
+          <ScalarProperty Name="NumberOfItems" ColumnName="NumberOfItems" />
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="VoucherRate" ColumnName="VoucherRate" />
+          <ScalarProperty Name="RateType" ColumnName="RateType" />
+          <ScalarProperty Name="VoucherStatus" ColumnName="VoucherStatus" />
+          <ScalarProperty Name="FormOfPayment" ColumnName="FormOfPayment" />
+          <ScalarProperty Name="CCID" ColumnName="CCID" />
+          <ScalarProperty Name="CreditCardNumber" ColumnName="CreditCardNumber" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="APDueDate" ColumnName="APDueDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="GWExported" ColumnName="GWExported" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ARInvoices">
+      <EntityTypeMapping TypeName="TravComModel.ARInvoices">
+        <MappingFragment StoreEntitySet="ARInvoices">
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="BranchNumber" ColumnName="BranchNumber" />
+          <ScalarProperty Name="IataNumber" ColumnName="IataNumber" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="ProfileNumber" ColumnName="ProfileNumber" />
+          <ScalarProperty Name="ProfileName" ColumnName="ProfileName" />
+          <ScalarProperty Name="ProfileAddress" ColumnName="ProfileAddress" />
+          <ScalarProperty Name="ProfileEmail" ColumnName="ProfileEmail" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="BookingAgentNumber" ColumnName="BookingAgentNumber" />
+          <ScalarProperty Name="TicketingAgentNumber" ColumnName="TicketingAgentNumber" />
+          <ScalarProperty Name="OSAgentNumber1" ColumnName="OSAgentNumber1" />
+          <ScalarProperty Name="OSAgentNumber2" ColumnName="OSAgentNumber2" />
+          <ScalarProperty Name="RecordLocator" ColumnName="RecordLocator" />
+          <ScalarProperty Name="InvoiceGroup" ColumnName="InvoiceGroup" />
+          <ScalarProperty Name="VatCode" ColumnName="VatCode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="InvoiceRemarks" ColumnName="InvoiceRemarks" />
+          <ScalarProperty Name="PrivateRemarks" ColumnName="PrivateRemarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IfInvoiceDetails">
+      <EntityTypeMapping TypeName="TravComModel.IfInvoiceDetails">
+        <MappingFragment StoreEntitySet="IfInvoiceDetails">
+          <ScalarProperty Name="InvoiceDetailID" ColumnName="InvoiceDetailID" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="PostingMonth" ColumnName="PostingMonth" />
+          <ScalarProperty Name="SubmitTo" ColumnName="SubmitTo" />
+          <ScalarProperty Name="VendorNumber" ColumnName="VendorNumber" />
+          <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+          <ScalarProperty Name="VendorAddress" ColumnName="VendorAddress" />
+          <ScalarProperty Name="VendorPhone" ColumnName="VendorPhone" />
+          <ScalarProperty Name="VendorFax" ColumnName="VendorFax" />
+          <ScalarProperty Name="VendorEmail" ColumnName="VendorEmail" />
+          <ScalarProperty Name="ChainCode" ColumnName="ChainCode" />
+          <ScalarProperty Name="PropertyCode" ColumnName="PropertyCode" />
+          <ScalarProperty Name="CommissionClientNumber" ColumnName="CommissionClientNumber" />
+          <ScalarProperty Name="AgencyCCVendorNumber" ColumnName="AgencyCCVendorNumber" />
+          <ScalarProperty Name="AgencyCCCardNumber" ColumnName="AgencyCCCardNumber" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="VatCode" ColumnName="VatCode" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="PassengerName" ColumnName="PassengerName" />
+          <ScalarProperty Name="ValidatingCarrier" ColumnName="ValidatingCarrier" />
+          <ScalarProperty Name="TicketNumber" ColumnName="TicketNumber" />
+          <ScalarProperty Name="ETicket" ColumnName="ETicket" />
+          <ScalarProperty Name="Exchange" ColumnName="Exchange" />
+          <ScalarProperty Name="ADM" ColumnName="ADM" />
+          <ScalarProperty Name="OriginalTicket" ColumnName="OriginalTicket" />
+          <ScalarProperty Name="OriginalInvoice" ColumnName="OriginalInvoice" />
+          <ScalarProperty Name="PublishedFare" ColumnName="PublishedFare" />
+          <ScalarProperty Name="SellingFare" ColumnName="SellingFare" />
+          <ScalarProperty Name="ReferenceFare" ColumnName="ReferenceFare" />
+          <ScalarProperty Name="LowFare" ColumnName="LowFare" />
+          <ScalarProperty Name="Tax1" ColumnName="Tax1" />
+          <ScalarProperty Name="Tax2" ColumnName="Tax2" />
+          <ScalarProperty Name="Tax3" ColumnName="Tax3" />
+          <ScalarProperty Name="Tax4" ColumnName="Tax4" />
+          <ScalarProperty Name="Penalty" ColumnName="Penalty" />
+          <ScalarProperty Name="GrossAmount" ColumnName="GrossAmount" />
+          <ScalarProperty Name="CommissionAmount" ColumnName="CommissionAmount" />
+          <ScalarProperty Name="VatOnCommission" ColumnName="VatOnCommission" />
+          <ScalarProperty Name="PstOnCommission" ColumnName="PstOnCommission" />
+          <ScalarProperty Name="PenaltyCommission" ColumnName="PenaltyCommission" />
+          <ScalarProperty Name="NetFare" ColumnName="NetFare" />
+          <ScalarProperty Name="NetFareValueCode" ColumnName="NetFareValueCode" />
+          <ScalarProperty Name="BookingAgentCommission" ColumnName="BookingAgentCommission" />
+          <ScalarProperty Name="TicketingAgentCommission" ColumnName="TicketingAgentCommission" />
+          <ScalarProperty Name="OSAgentCommission1" ColumnName="OSAgentCommission1" />
+          <ScalarProperty Name="OSAgentCommission2" ColumnName="OSAgentCommission2" />
+          <ScalarProperty Name="International" ColumnName="International" />
+          <ScalarProperty Name="ExceptionCode" ColumnName="ExceptionCode" />
+          <ScalarProperty Name="GSANumber" ColumnName="GSANumber" />
+          <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
+          <ScalarProperty Name="FreeFieldA" ColumnName="FreeFieldA" />
+          <ScalarProperty Name="FreeFieldB" ColumnName="FreeFieldB" />
+          <ScalarProperty Name="FreeFieldC" ColumnName="FreeFieldC" />
+          <ScalarProperty Name="FreeFieldD" ColumnName="FreeFieldD" />
+          <ScalarProperty Name="RoutingCode" ColumnName="RoutingCode" />
+          <ScalarProperty Name="TourCode" ColumnName="TourCode" />
+          <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+          <ScalarProperty Name="TransactionCode" ColumnName="TransactionCode" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="TravelDate" ColumnName="TravelDate" />
+          <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+          <ScalarProperty Name="NumberOfDays" ColumnName="NumberOfDays" />
+          <ScalarProperty Name="NumberOfPassengers" ColumnName="NumberOfPassengers" />
+          <ScalarProperty Name="NumberOfItems" ColumnName="NumberOfItems" />
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="VoucherRate" ColumnName="VoucherRate" />
+          <ScalarProperty Name="RateType" ColumnName="RateType" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="VoucherStatus" ColumnName="VoucherStatus" />
+          <ScalarProperty Name="APDueDate" ColumnName="APDueDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IfInvoices">
+      <EntityTypeMapping TypeName="TravComModel.IfInvoices">
+        <MappingFragment StoreEntitySet="IfInvoices">
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="Record" ColumnName="Record" />
+          <ScalarProperty Name="IfMenu" ColumnName="IfMenu" />
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="BranchNumber" ColumnName="BranchNumber" />
+          <ScalarProperty Name="IataNumber" ColumnName="IataNumber" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="ProfileNumber" ColumnName="ProfileNumber" />
+          <ScalarProperty Name="ProfileName" ColumnName="ProfileName" />
+          <ScalarProperty Name="ProfileAddress" ColumnName="ProfileAddress" />
+          <ScalarProperty Name="ProfilePhoneNumber" ColumnName="ProfilePhoneNumber" />
+          <ScalarProperty Name="ProfileEmail" ColumnName="ProfileEmail" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="BookingAgentNumber" ColumnName="BookingAgentNumber" />
+          <ScalarProperty Name="TicketingAgentNumber" ColumnName="TicketingAgentNumber" />
+          <ScalarProperty Name="OSAgentNumber1" ColumnName="OSAgentNumber1" />
+          <ScalarProperty Name="OSAgentNumber2" ColumnName="OSAgentNumber2" />
+          <ScalarProperty Name="RecordLocator" ColumnName="RecordLocator" />
+          <ScalarProperty Name="InvoiceGroup" ColumnName="InvoiceGroup" />
+          <ScalarProperty Name="InvoiceRemarks" ColumnName="InvoiceRemarks" />
+          <ScalarProperty Name="PrivateRemarks" ColumnName="PrivateRemarks" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="PostNow" ColumnName="PostNow" />
+          <ScalarProperty Name="Refresh" ColumnName="Refresh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IfPayments">
+      <EntityTypeMapping TypeName="TravComModel.IfPayments">
+        <MappingFragment StoreEntitySet="IfPayments">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="InvoiceDetailID" ColumnName="InvoiceDetailID" />
+          <ScalarProperty Name="FormOfPayment" ColumnName="FormOfPayment" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="BankNumber" ColumnName="BankNumber" />
+          <ScalarProperty Name="CCID" ColumnName="CCID" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+          <ScalarProperty Name="CardHolder" ColumnName="CardHolder" />
+          <ScalarProperty Name="AuthorizationNumber" ColumnName="AuthorizationNumber" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IfSegments">
+      <EntityTypeMapping TypeName="TravComModel.IfSegments">
+        <MappingFragment StoreEntitySet="IfSegments">
+          <ScalarProperty Name="SegmentID" ColumnName="SegmentID" />
+          <ScalarProperty Name="InvoiceDetailID" ColumnName="InvoiceDetailID" />
+          <ScalarProperty Name="LegNumber" ColumnName="LegNumber" />
+          <ScalarProperty Name="DepartureCityCode" ColumnName="DepartureCityCode" />
+          <ScalarProperty Name="DepartureInfo" ColumnName="DepartureInfo" />
+          <ScalarProperty Name="ArrivalCityCode" ColumnName="ArrivalCityCode" />
+          <ScalarProperty Name="ArrivalInfo" ColumnName="ArrivalInfo" />
+          <ScalarProperty Name="AirlineCode" ColumnName="AirlineCode" />
+          <ScalarProperty Name="FlightNumber" ColumnName="FlightNumber" />
+          <ScalarProperty Name="ClassOfService" ColumnName="ClassOfService" />
+          <ScalarProperty Name="XO" ColumnName="XO" />
+          <ScalarProperty Name="DI" ColumnName="DI" />
+          <ScalarProperty Name="FareBasis" ColumnName="FareBasis" />
+          <ScalarProperty Name="LegPrice" ColumnName="LegPrice" />
+          <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+          <ScalarProperty Name="DepartureCityName" ColumnName="DepartureCityName" />
+          <ScalarProperty Name="ArrivalCityName" ColumnName="ArrivalCityName" />
+          <ScalarProperty Name="AircraftType" ColumnName="AircraftType" />
+          <ScalarProperty Name="MealService" ColumnName="MealService" />
+          <ScalarProperty Name="FlightDuration" ColumnName="FlightDuration" />
+          <ScalarProperty Name="CheckinTime" ColumnName="CheckinTime" />
+          <ScalarProperty Name="NumberOfStops" ColumnName="NumberOfStops" />
+          <ScalarProperty Name="DepartureTerminal" ColumnName="DepartureTerminal" />
+          <ScalarProperty Name="ArrivalTerminal" ColumnName="ArrivalTerminal" />
+          <ScalarProperty Name="SeatNo" ColumnName="SeatNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Segments">
+      <EntityTypeMapping TypeName="TravComModel.Segments">
+        <MappingFragment StoreEntitySet="Segments">
+          <ScalarProperty Name="SegmentID" ColumnName="SegmentID" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="InvoiceDetailID" ColumnName="InvoiceDetailID" />
+          <ScalarProperty Name="LegNumber" ColumnName="LegNumber" />
+          <ScalarProperty Name="DepartureCityCode" ColumnName="DepartureCityCode" />
+          <ScalarProperty Name="DepartureInfo" ColumnName="DepartureInfo" />
+          <ScalarProperty Name="ArrivalCityCode" ColumnName="ArrivalCityCode" />
+          <ScalarProperty Name="ArrivalInfo" ColumnName="ArrivalInfo" />
+          <ScalarProperty Name="AirlineCode" ColumnName="AirlineCode" />
+          <ScalarProperty Name="FlightNumber" ColumnName="FlightNumber" />
+          <ScalarProperty Name="ClassOfService" ColumnName="ClassOfService" />
+          <ScalarProperty Name="XO" ColumnName="XO" />
+          <ScalarProperty Name="DI" ColumnName="DI" />
+          <ScalarProperty Name="FareBasis" ColumnName="FareBasis" />
+          <ScalarProperty Name="LegPrice" ColumnName="LegPrice" />
+          <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Airlines">
+      <EntityTypeMapping TypeName="TravComModel.Airlines">
+        <MappingFragment StoreEntitySet="Airlines">
+          <ScalarProperty Name="Preferred" ColumnName="Preferred" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="PSTExempt" ColumnName="PSTExempt" />
+          <ScalarProperty Name="VATExempt" ColumnName="VATExempt" />
+          <ScalarProperty Name="AirlineName" ColumnName="AirlineName" />
+          <ScalarProperty Name="AirlineCode" ColumnName="AirlineCode" />
+          <ScalarProperty Name="AirlineNumber" ColumnName="AirlineNumber" />
+          <ScalarProperty Name="AirlineID" ColumnName="AirlineID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profiles">
+      <EntityTypeMapping TypeName="TravComModel.Profiles">
+        <MappingFragment StoreEntitySet="Profiles">
+          <ScalarProperty Name="Branches" ColumnName="Branches" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="CBSync" ColumnName="CBSync" />
+          <ScalarProperty Name="SendEmail" ColumnName="SendEmail" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="LastDate" ColumnName="LastDate" />
+          <ScalarProperty Name="FirstDate" ColumnName="FirstDate" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="PhoneSort5" ColumnName="PhoneSort5" />
+          <ScalarProperty Name="PhoneSort4" ColumnName="PhoneSort4" />
+          <ScalarProperty Name="PhoneSort3" ColumnName="PhoneSort3" />
+          <ScalarProperty Name="PhoneSort2" ColumnName="PhoneSort2" />
+          <ScalarProperty Name="PhoneSort1" ColumnName="PhoneSort1" />
+          <ScalarProperty Name="PhoneNumber5" ColumnName="PhoneNumber5" />
+          <ScalarProperty Name="PhoneNumber4" ColumnName="PhoneNumber4" />
+          <ScalarProperty Name="PhoneNumber3" ColumnName="PhoneNumber3" />
+          <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+          <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber1" />
+          <ScalarProperty Name="PhoneType5" ColumnName="PhoneType5" />
+          <ScalarProperty Name="PhoneType4" ColumnName="PhoneType4" />
+          <ScalarProperty Name="PhoneType3" ColumnName="PhoneType3" />
+          <ScalarProperty Name="PhoneType2" ColumnName="PhoneType2" />
+          <ScalarProperty Name="PhoneType1" ColumnName="PhoneType1" />
+          <ScalarProperty Name="Salutation" ColumnName="Salutation" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="InterfaceCode" ColumnName="InterfaceCode" />
+          <ScalarProperty Name="ProfileNumber" ColumnName="ProfileNumber" />
+          <ScalarProperty Name="ProfileType" ColumnName="ProfileType" />
+          <ScalarProperty Name="ProfileID" ColumnName="ProfileID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

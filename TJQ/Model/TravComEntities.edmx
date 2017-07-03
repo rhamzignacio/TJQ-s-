@@ -1,0 +1,1284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TravComModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Airlines">
+          <Key>
+            <PropertyRef Name="AirlineID" />
+          </Key>
+          <Property Name="AirlineID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AirlineNumber" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="AirlineCode" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="AirlineName" Type="varchar" MaxLength="50" />
+          <Property Name="VATExempt" Type="bit" Nullable="false" />
+          <Property Name="PSTExempt" Type="bit" Nullable="false" />
+          <Property Name="Province" Type="varchar" MaxLength="2" />
+          <Property Name="Preferred" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="APInvoices">
+          <Key>
+            <PropertyRef Name="InvoiceID" />
+          </Key>
+          <Property Name="InvoiceID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ARInvoiceID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ARInvoiceDetailID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="InvoiceNumber" Type="varchar" MaxLength="15" />
+          <Property Name="BranchNumber" Type="smallint" Nullable="false" />
+          <Property Name="ProfileNumber" Type="varchar" MaxLength="8" />
+          <Property Name="ProfileName" Type="varchar" MaxLength="50" />
+          <Property Name="ProfileAddress" Type="varchar" MaxLength="255" />
+          <Property Name="InvoiceDate" Type="datetime" />
+          <Property Name="DueDate" Type="datetime" />
+          <Property Name="SystemDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="PostingMonth" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="InvoiceAmount" Type="money" Nullable="false" />
+          <Property Name="VatAmount" Type="money" Nullable="false" />
+          <Property Name="PstAmount" Type="money" Nullable="false" />
+          <Property Name="Balance" Type="money" Nullable="false" />
+          <Property Name="CurrencyCode" Type="varchar" MaxLength="3" />
+          <Property Name="VatCode" Type="varchar" MaxLength="2" />
+          <Property Name="ExchangeRate" Type="float" Nullable="false" />
+          <Property Name="PayableAccount" Type="varchar" MaxLength="10" />
+          <Property Name="OnHold" Type="bit" Nullable="false" />
+          <Property Name="MarkToPay" Type="bit" Nullable="false" />
+          <Property Name="AmountToPay" Type="money" Nullable="false" />
+          <Property Name="AddedBy" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Remarks" Type="text" />
+          <Property Name="TicketNumber" Type="varchar" MaxLength="20" />
+          <Property Name="InvoiceGroup" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ARInvoiceBalances">
+          <Key>
+            <PropertyRef Name="InvoiceBalanceID" />
+          </Key>
+          <Property Name="InvoiceBalanceID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="InvoiceAmount" Type="money" Nullable="false" />
+          <Property Name="VatAmount" Type="money" Nullable="false" />
+          <Property Name="PstAmount" Type="money" Nullable="false" />
+          <Property Name="Balance" Type="money" Nullable="false" />
+          <Property Name="CurrencyCode" Type="varchar" MaxLength="3" />
+          <Property Name="ExchangeRate" Type="float" Nullable="false" />
+          <Property Name="ReceivableAccount" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ARInvoiceDetails">
+          <Key>
+            <PropertyRef Name="InvoiceDetailID" />
+          </Key>
+          <Property Name="InvoiceDetailID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ReservationID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TransactionType" Type="tinyint" Nullable="false" />
+          <Property Name="TransactionDate" Type="datetime" />
+          <Property Name="SystemDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="PostingMonth" Type="int" Nullable="false" />
+          <Property Name="SubmitTo" Type="tinyint" Nullable="false" />
+          <Property Name="VendorNumber" Type="varchar" MaxLength="8" />
+          <Property Name="VendorName" Type="varchar" MaxLength="50" />
+          <Property Name="VendorAddress" Type="varchar" MaxLength="255" />
+          <Property Name="VendorPhone" Type="varchar" MaxLength="20" />
+          <Property Name="VendorFax" Type="varchar" MaxLength="20" />
+          <Property Name="VendorEmail" Type="varchar" MaxLength="100" />
+          <Property Name="ChainCode" Type="varchar" MaxLength="2" />
+          <Property Name="PropertyCode" Type="varchar" MaxLength="30" />
+          <Property Name="CommissionClientNumber" Type="varchar" MaxLength="10" />
+          <Property Name="AgencyCCVendorNumber" Type="varchar" MaxLength="8" />
+          <Property Name="ProductCode" Type="tinyint" Nullable="false" />
+          <Property Name="VatCode" Type="varchar" MaxLength="2" />
+          <Property Name="CurrencyCode" Type="varchar" MaxLength="3" />
+          <Property Name="PassengerName" Type="varchar" MaxLength="50" />
+          <Property Name="ValidatingCarrier" Type="varchar" MaxLength="3" />
+          <Property Name="TicketNumber" Type="varchar" MaxLength="20" />
+          <Property Name="ETicket" Type="bit" Nullable="false" />
+          <Property Name="Exchange" Type="bit" Nullable="false" />
+          <Property Name="ADM" Type="bit" Nullable="false" />
+          <Property Name="OriginalTicket" Type="varchar" MaxLength="30" />
+          <Property Name="OriginalInvoice" Type="varchar" MaxLength="30" />
+          <Property Name="PublishedFare" Type="money" Nullable="false" />
+          <Property Name="SellingFare" Type="money" Nullable="false" />
+          <Property Name="ReferenceFare" Type="money" Nullable="false" />
+          <Property Name="LowFare" Type="money" Nullable="false" />
+          <Property Name="Tax1" Type="money" Nullable="false" />
+          <Property Name="Tax2" Type="money" Nullable="false" />
+          <Property Name="Tax3" Type="money" Nullable="false" />
+          <Property Name="Tax4" Type="money" Nullable="false" />
+          <Property Name="Penalty" Type="money" Nullable="false" />
+          <Property Name="GrossAmount" Type="money" Nullable="false" />
+          <Property Name="CommissionAmount" Type="money" Nullable="false" />
+          <Property Name="VatOnCommission" Type="money" Nullable="false" />
+          <Property Name="PstOnCommission" Type="money" Nullable="false" />
+          <Property Name="PenaltyCommission" Type="money" Nullable="false" />
+          <Property Name="NetFare" Type="money" Nullable="false" />
+          <Property Name="NetFareValueCode" Type="varchar" MaxLength="1" />
+          <Property Name="BookingAgentCommission" Type="money" Nullable="false" />
+          <Property Name="TicketingAgentCommission" Type="money" Nullable="false" />
+          <Property Name="OSAgentCommission1" Type="money" Nullable="false" />
+          <Property Name="OSAgentCommission2" Type="money" Nullable="false" />
+          <Property Name="International" Type="bit" Nullable="false" />
+          <Property Name="ExceptionCode" Type="varchar" MaxLength="3" />
+          <Property Name="GSANumber" Type="varchar" MaxLength="50" />
+          <Property Name="PurchaseOrder" Type="varchar" MaxLength="50" />
+          <Property Name="FreeFieldA" Type="varchar" MaxLength="250" />
+          <Property Name="FreeFieldB" Type="varchar" MaxLength="250" />
+          <Property Name="FreeFieldC" Type="varchar" MaxLength="250" />
+          <Property Name="FreeFieldD" Type="varchar" MaxLength="250" />
+          <Property Name="RoutingCode" Type="varchar" MaxLength="50" />
+          <Property Name="TourCode" Type="varchar" MaxLength="50" />
+          <Property Name="GroupCode" Type="varchar" MaxLength="50" />
+          <Property Name="TransactionCode" Type="varchar" MaxLength="50" />
+          <Property Name="Source" Type="varchar" MaxLength="30" />
+          <Property Name="TravelDate" Type="datetime" />
+          <Property Name="ReturnDate" Type="datetime" />
+          <Property Name="NumberOfDays" Type="smallint" Nullable="false" />
+          <Property Name="NumberOfPassengers" Type="smallint" Nullable="false" />
+          <Property Name="NumberOfItems" Type="smallint" Nullable="false" />
+          <Property Name="ItemType" Type="varchar" MaxLength="20" />
+          <Property Name="CityCode" Type="varchar" MaxLength="5" />
+          <Property Name="VoucherRate" Type="money" Nullable="false" />
+          <Property Name="RateType" Type="tinyint" Nullable="false" />
+          <Property Name="VoucherStatus" Type="tinyint" Nullable="false" />
+          <Property Name="FormOfPayment" Type="tinyint" Nullable="false" />
+          <Property Name="CCID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CreditCardNumber" Type="varchar" MaxLength="30" />
+          <Property Name="CreditAmount" Type="money" Nullable="false" />
+          <Property Name="APDueDate" Type="datetime" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="AddedBy" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="GWExported" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ARInvoices">
+          <Key>
+            <PropertyRef Name="InvoiceID" />
+          </Key>
+          <Property Name="InvoiceID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceNumber" Type="varchar" MaxLength="10" />
+          <Property Name="BranchNumber" Type="smallint" Nullable="false" />
+          <Property Name="IataNumber" Type="int" Nullable="false" />
+          <Property Name="Division" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="ProfileNumber" Type="varchar" MaxLength="10" />
+          <Property Name="ProfileName" Type="varchar" MaxLength="50" />
+          <Property Name="ProfileAddress" Type="varchar" MaxLength="255" />
+          <Property Name="ProfileEmail" Type="varchar" MaxLength="255" />
+          <Property Name="Department" Type="varchar" MaxLength="30" />
+          <Property Name="BookingDate" Type="datetime" />
+          <Property Name="InvoiceDate" Type="datetime" />
+          <Property Name="DueDate" Type="datetime" />
+          <Property Name="SystemDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="BookingAgentNumber" Type="varchar" MaxLength="6" />
+          <Property Name="TicketingAgentNumber" Type="varchar" MaxLength="6" />
+          <Property Name="OSAgentNumber1" Type="varchar" MaxLength="6" />
+          <Property Name="OSAgentNumber2" Type="varchar" MaxLength="6" />
+          <Property Name="RecordLocator" Type="varchar" MaxLength="20" />
+          <Property Name="InvoiceGroup" Type="varchar" MaxLength="50" />
+          <Property Name="VatCode" Type="varchar" MaxLength="2" />
+          <Property Name="Status" Type="smallint" Nullable="false" />
+          <Property Name="AddedBy" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="InvoiceRemarks" Type="text" />
+          <Property Name="PrivateRemarks" Type="text" />
+        </EntityType>
+        <EntityType Name="IfInvoiceDetails">
+          <Key>
+            <PropertyRef Name="InvoiceDetailID" />
+          </Key>
+          <Property Name="InvoiceDetailID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ReservationID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TransactionType" Type="tinyint" Nullable="false" />
+          <Property Name="TransactionDate" Type="datetime" />
+          <Property Name="PostingMonth" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="SubmitTo" Type="tinyint" Nullable="false" />
+          <Property Name="VendorNumber" Type="varchar" MaxLength="10" />
+          <Property Name="VendorName" Type="varchar" MaxLength="50" />
+          <Property Name="VendorAddress" Type="varchar" MaxLength="255" />
+          <Property Name="VendorPhone" Type="varchar" MaxLength="20" />
+          <Property Name="VendorFax" Type="varchar" MaxLength="20" />
+          <Property Name="VendorEmail" Type="varchar" MaxLength="100" />
+          <Property Name="ChainCode" Type="varchar" MaxLength="2" />
+          <Property Name="PropertyCode" Type="varchar" MaxLength="30" />
+          <Property Name="CommissionClientNumber" Type="varchar" MaxLength="10" />
+          <Property Name="AgencyCCVendorNumber" Type="varchar" MaxLength="10" />
+          <Property Name="AgencyCCCardNumber" Type="varchar" MaxLength="30" />
+          <Property Name="ProductCode" Type="tinyint" Nullable="false" />
+          <Property Name="VatCode" Type="varchar" MaxLength="2" />
+          <Property Name="CurrencyCode" Type="varchar" MaxLength="3" />
+          <Property Name="PassengerName" Type="varchar" MaxLength="50" />
+          <Property Name="ValidatingCarrier" Type="varchar" MaxLength="3" />
+          <Property Name="TicketNumber" Type="varchar" MaxLength="20" />
+          <Property Name="ETicket" Type="bit" Nullable="false" />
+          <Property Name="Exchange" Type="bit" Nullable="false" />
+          <Property Name="ADM" Type="bit" Nullable="false" />
+          <Property Name="OriginalTicket" Type="varchar" MaxLength="30" />
+          <Property Name="OriginalInvoice" Type="varchar" MaxLength="30" />
+          <Property Name="PublishedFare" Type="money" Nullable="false" />
+          <Property Name="SellingFare" Type="money" Nullable="false" />
+          <Property Name="ReferenceFare" Type="money" Nullable="false" />
+          <Property Name="LowFare" Type="money" Nullable="false" />
+          <Property Name="Tax1" Type="money" Nullable="false" />
+          <Property Name="Tax2" Type="money" Nullable="false" />
+          <Property Name="Tax3" Type="money" Nullable="false" />
+          <Property Name="Tax4" Type="money" Nullable="false" />
+          <Property Name="Penalty" Type="money" Nullable="false" />
+          <Property Name="GrossAmount" Type="money" Nullable="false" />
+          <Property Name="CommissionAmount" Type="money" Nullable="false" />
+          <Property Name="VatOnCommission" Type="money" Nullable="false" />
+          <Property Name="PstOnCommission" Type="money" Nullable="false" />
+          <Property Name="PenaltyCommission" Type="money" Nullable="false" />
+          <Property Name="NetFare" Type="money" Nullable="false" />
+          <Property Name="NetFareValueCode" Type="varchar" MaxLength="1" />
+          <Property Name="BookingAgentCommission" Type="money" Nullable="false" />
+          <Property Name="TicketingAgentCommission" Type="money" Nullable="false" />
+          <Property Name="OSAgentCommission1" Type="money" Nullable="false" />
+          <Property Name="OSAgentCommission2" Type="money" Nullable="false" />
+          <Property Name="International" Type="bit" Nullable="false" />
+          <Property Name="ExceptionCode" Type="varchar" MaxLength="3" />
+          <Property Name="GSANumber" Type="varchar" MaxLength="50" />
+          <Property Name="PurchaseOrder" Type="varchar" MaxLength="50" />
+          <Property Name="FreeFieldA" Type="varchar(max)" />
+          <Property Name="FreeFieldB" Type="varchar" MaxLength="250" />
+          <Property Name="FreeFieldC" Type="varchar" MaxLength="250" />
+          <Property Name="FreeFieldD" Type="varchar" MaxLength="250" />
+          <Property Name="RoutingCode" Type="varchar" MaxLength="50" />
+          <Property Name="TourCode" Type="varchar" MaxLength="50" />
+          <Property Name="GroupCode" Type="varchar" MaxLength="50" />
+          <Property Name="TransactionCode" Type="varchar" MaxLength="50" />
+          <Property Name="Source" Type="varchar" MaxLength="30" />
+          <Property Name="TravelDate" Type="datetime" />
+          <Property Name="ReturnDate" Type="datetime" />
+          <Property Name="NumberOfDays" Type="smallint" Nullable="false" />
+          <Property Name="NumberOfPassengers" Type="smallint" Nullable="false" />
+          <Property Name="NumberOfItems" Type="smallint" Nullable="false" />
+          <Property Name="ItemType" Type="varchar" MaxLength="20" />
+          <Property Name="CityCode" Type="varchar" MaxLength="5" />
+          <Property Name="VoucherRate" Type="money" Nullable="false" />
+          <Property Name="RateType" Type="tinyint" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="VoucherStatus" Type="tinyint" Nullable="false" />
+          <Property Name="APDueDate" Type="datetime" />
+          <Property Name="AddedBy" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IfInvoices">
+          <Key>
+            <PropertyRef Name="InvoiceID" />
+          </Key>
+          <Property Name="InvoiceID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Record" Type="int" Nullable="false" />
+          <Property Name="IfMenu" Type="varchar" MaxLength="1" />
+          <Property Name="TransactionType" Type="tinyint" Nullable="false" />
+          <Property Name="InvoiceNumber" Type="varchar" MaxLength="10" />
+          <Property Name="BranchNumber" Type="smallint" Nullable="false" />
+          <Property Name="IataNumber" Type="int" Nullable="false" />
+          <Property Name="Division" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="ProfileNumber" Type="varchar" MaxLength="10" />
+          <Property Name="ProfileName" Type="varchar" MaxLength="50" />
+          <Property Name="ProfileAddress" Type="varchar" MaxLength="255" />
+          <Property Name="ProfilePhoneNumber" Type="varchar" MaxLength="255" />
+          <Property Name="ProfileEmail" Type="varchar" MaxLength="255" />
+          <Property Name="Department" Type="varchar" MaxLength="30" />
+          <Property Name="BookingDate" Type="datetime" />
+          <Property Name="InvoiceDate" Type="datetime" />
+          <Property Name="DueDate" Type="datetime" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="BookingAgentNumber" Type="varchar" MaxLength="10" />
+          <Property Name="TicketingAgentNumber" Type="varchar" MaxLength="10" />
+          <Property Name="OSAgentNumber1" Type="varchar" MaxLength="10" />
+          <Property Name="OSAgentNumber2" Type="varchar" MaxLength="10" />
+          <Property Name="RecordLocator" Type="varchar" MaxLength="20" />
+          <Property Name="InvoiceGroup" Type="varchar" MaxLength="50" />
+          <Property Name="InvoiceRemarks" Type="text" />
+          <Property Name="PrivateRemarks" Type="text" />
+          <Property Name="AddedBy" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PostNow" Type="bit" Nullable="false" />
+          <Property Name="Refresh" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IfPayments">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+          </Key>
+          <Property Name="PaymentID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceDetailID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="FormOfPayment" Type="tinyint" Nullable="false" />
+          <Property Name="AccountNumber" Type="varchar" MaxLength="10" />
+          <Property Name="BankNumber" Type="varchar" MaxLength="10" />
+          <Property Name="CCID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Reference" Type="varchar" MaxLength="30" />
+          <Property Name="ExpirationDate" Type="datetime" />
+          <Property Name="CardHolder" Type="varchar" MaxLength="50" />
+          <Property Name="AuthorizationNumber" Type="varchar" MaxLength="30" />
+          <Property Name="Amount" Type="money" Nullable="false" />
+          <Property Name="CurrencyCode" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="IfSegments">
+          <Key>
+            <PropertyRef Name="SegmentID" />
+          </Key>
+          <Property Name="SegmentID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceDetailID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="LegNumber" Type="tinyint" Nullable="false" />
+          <Property Name="DepartureCityCode" Type="varchar" MaxLength="5" />
+          <Property Name="DepartureInfo" Type="datetime" />
+          <Property Name="ArrivalCityCode" Type="varchar" MaxLength="5" />
+          <Property Name="ArrivalInfo" Type="datetime" />
+          <Property Name="AirlineCode" Type="varchar" MaxLength="3" />
+          <Property Name="FlightNumber" Type="varchar" MaxLength="5" />
+          <Property Name="ClassOfService" Type="varchar" MaxLength="2" />
+          <Property Name="XO" Type="varchar" MaxLength="1" />
+          <Property Name="DI" Type="varchar" MaxLength="1" />
+          <Property Name="FareBasis" Type="varchar" MaxLength="15" />
+          <Property Name="LegPrice" Type="money" Nullable="false" />
+          <Property Name="Mileage" Type="int" Nullable="false" />
+          <Property Name="DepartureCityName" Type="varchar" MaxLength="50" />
+          <Property Name="ArrivalCityName" Type="varchar" MaxLength="50" />
+          <Property Name="AircraftType" Type="varchar" MaxLength="30" />
+          <Property Name="MealService" Type="varchar" MaxLength="30" />
+          <Property Name="FlightDuration" Type="varchar" MaxLength="10" />
+          <Property Name="CheckinTime" Type="varchar" MaxLength="10" />
+          <Property Name="NumberOfStops" Type="tinyint" Nullable="false" />
+          <Property Name="DepartureTerminal" Type="varchar" MaxLength="30" />
+          <Property Name="ArrivalTerminal" Type="varchar" MaxLength="30" />
+          <Property Name="SeatNo" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Profiles">
+          <Key>
+            <PropertyRef Name="ProfileID" />
+          </Key>
+          <Property Name="ProfileID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProfileType" Type="tinyint" Nullable="false" />
+          <Property Name="ProfileNumber" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="InterfaceCode" Type="varchar" MaxLength="50" />
+          <Property Name="AccountType" Type="tinyint" Nullable="false" />
+          <Property Name="Prefix" Type="varchar" MaxLength="20" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="FullName" Type="varchar" MaxLength="50" />
+          <Property Name="Salutation" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneType1" Type="varchar" MaxLength="20" />
+          <Property Name="PhoneType2" Type="varchar" MaxLength="20" />
+          <Property Name="PhoneType3" Type="varchar" MaxLength="20" />
+          <Property Name="PhoneType4" Type="varchar" MaxLength="20" />
+          <Property Name="PhoneType5" Type="varchar" MaxLength="20" />
+          <Property Name="PhoneNumber1" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneNumber2" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneNumber3" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneNumber4" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneNumber5" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneSort1" Type="varchar" MaxLength="20" />
+          <Property Name="PhoneSort2" Type="varchar" MaxLength="20" />
+          <Property Name="PhoneSort3" Type="varchar" MaxLength="20" />
+          <Property Name="PhoneSort4" Type="varchar" MaxLength="20" />
+          <Property Name="PhoneSort5" Type="varchar" MaxLength="20" />
+          <Property Name="Language" Type="tinyint" Nullable="false" />
+          <Property Name="FirstDate" Type="datetime" />
+          <Property Name="LastDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="Balance" Type="money" Nullable="false" />
+          <Property Name="AddedBy" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="SendEmail" Type="bit" Nullable="false" />
+          <Property Name="CBSync" Type="bit" Nullable="false" />
+          <Property Name="Notes" Type="text" />
+          <Property Name="Branches" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Segments">
+          <Key>
+            <PropertyRef Name="SegmentID" />
+          </Key>
+          <Property Name="SegmentID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="InvoiceDetailID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="LegNumber" Type="tinyint" Nullable="false" />
+          <Property Name="DepartureCityCode" Type="varchar" MaxLength="5" />
+          <Property Name="DepartureInfo" Type="datetime" />
+          <Property Name="ArrivalCityCode" Type="varchar" MaxLength="5" />
+          <Property Name="ArrivalInfo" Type="datetime" />
+          <Property Name="AirlineCode" Type="varchar" MaxLength="3" />
+          <Property Name="FlightNumber" Type="varchar" MaxLength="5" />
+          <Property Name="ClassOfService" Type="varchar" MaxLength="2" />
+          <Property Name="XO" Type="varchar" MaxLength="1" />
+          <Property Name="DI" Type="varchar" MaxLength="1" />
+          <Property Name="FareBasis" Type="varchar" MaxLength="15" />
+          <Property Name="LegPrice" Type="money" Nullable="false" />
+          <Property Name="Mileage" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TravComModelStoreContainer">
+          <EntitySet Name="Airlines" EntityType="Self.Airlines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="APInvoices" EntityType="Self.APInvoices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ARInvoiceBalances" EntityType="Self.ARInvoiceBalances" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ARInvoiceDetails" EntityType="Self.ARInvoiceDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ARInvoices" EntityType="Self.ARInvoices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IfInvoiceDetails" EntityType="Self.IfInvoiceDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IfInvoices" EntityType="Self.IfInvoices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IfPayments" EntityType="Self.IfPayments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IfSegments" EntityType="Self.IfSegments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profiles" EntityType="Self.Profiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Segments" EntityType="Self.Segments" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TravComModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="APInvoices">
+          <Key>
+            <PropertyRef Name="InvoiceID" />
+          </Key>
+          <Property Name="InvoiceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ARInvoiceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ARInvoiceDetailID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="InvoiceNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="BranchNumber" Type="Int16" Nullable="false" />
+          <Property Name="ProfileNumber" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+          <Property Name="DueDate" Type="DateTime" Precision="3" />
+          <Property Name="SystemDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="PostingMonth" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="VatAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="PstAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="CurrencyCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="VatCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ExchangeRate" Type="Double" Nullable="false" />
+          <Property Name="PayableAccount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="OnHold" Type="Boolean" Nullable="false" />
+          <Property Name="MarkToPay" Type="Boolean" Nullable="false" />
+          <Property Name="AmountToPay" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="AddedBy" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TicketNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ARInvoiceBalances">
+          <Key>
+            <PropertyRef Name="InvoiceBalanceID" />
+          </Key>
+          <Property Name="InvoiceBalanceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="InvoiceAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="VatAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="PstAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="CurrencyCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="ExchangeRate" Type="Double" Nullable="false" />
+          <Property Name="ReceivableAccount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ARInvoiceDetails">
+          <Key>
+            <PropertyRef Name="InvoiceDetailID" />
+          </Key>
+          <Property Name="InvoiceDetailID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ReservationID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TransactionType" Type="Byte" Nullable="false" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+          <Property Name="SystemDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="PostingMonth" Type="Int32" Nullable="false" />
+          <Property Name="SubmitTo" Type="Byte" Nullable="false" />
+          <Property Name="VendorNumber" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="VendorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VendorAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="VendorPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VendorFax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VendorEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ChainCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="PropertyCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CommissionClientNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AgencyCCVendorNumber" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="ProductCode" Type="Byte" Nullable="false" />
+          <Property Name="VatCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CurrencyCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="PassengerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ValidatingCarrier" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="TicketNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ETicket" Type="Boolean" Nullable="false" />
+          <Property Name="Exchange" Type="Boolean" Nullable="false" />
+          <Property Name="ADM" Type="Boolean" Nullable="false" />
+          <Property Name="OriginalTicket" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OriginalInvoice" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PublishedFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="SellingFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="ReferenceFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="LowFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Tax1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Tax2" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Tax3" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Tax4" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Penalty" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="GrossAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="CommissionAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="VatOnCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="PstOnCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="PenaltyCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="NetFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="NetFareValueCode" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="BookingAgentCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="TicketingAgentCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="OSAgentCommission1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="OSAgentCommission2" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="International" Type="Boolean" Nullable="false" />
+          <Property Name="ExceptionCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="GSANumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PurchaseOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FreeFieldA" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="FreeFieldB" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="FreeFieldC" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="FreeFieldD" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="RoutingCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TourCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GroupCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TransactionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Source" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TravelDate" Type="DateTime" Precision="3" />
+          <Property Name="ReturnDate" Type="DateTime" Precision="3" />
+          <Property Name="NumberOfDays" Type="Int16" Nullable="false" />
+          <Property Name="NumberOfPassengers" Type="Int16" Nullable="false" />
+          <Property Name="NumberOfItems" Type="Int16" Nullable="false" />
+          <Property Name="ItemType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CityCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="VoucherRate" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="RateType" Type="Byte" Nullable="false" />
+          <Property Name="VoucherStatus" Type="Byte" Nullable="false" />
+          <Property Name="FormOfPayment" Type="Byte" Nullable="false" />
+          <Property Name="CCID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CreditCardNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CreditAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="APDueDate" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Byte" Nullable="false" />
+          <Property Name="AddedBy" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="GWExported" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ARInvoices">
+          <Key>
+            <PropertyRef Name="InvoiceID" />
+          </Key>
+          <Property Name="InvoiceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BranchNumber" Type="Int16" Nullable="false" />
+          <Property Name="IataNumber" Type="Int32" Nullable="false" />
+          <Property Name="Division" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProfileNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Department" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BookingDate" Type="DateTime" Precision="3" />
+          <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+          <Property Name="DueDate" Type="DateTime" Precision="3" />
+          <Property Name="SystemDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BookingAgentNumber" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="TicketingAgentNumber" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="OSAgentNumber1" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="OSAgentNumber2" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="RecordLocator" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VatCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int16" Nullable="false" />
+          <Property Name="AddedBy" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="InvoiceRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PrivateRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="IfInvoiceDetails">
+          <Key>
+            <PropertyRef Name="InvoiceDetailID" />
+          </Key>
+          <Property Name="InvoiceDetailID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ReservationID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TransactionType" Type="Byte" Nullable="false" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+          <Property Name="PostingMonth" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="SubmitTo" Type="Byte" Nullable="false" />
+          <Property Name="VendorNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="VendorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VendorAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="VendorPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VendorFax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VendorEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ChainCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="PropertyCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CommissionClientNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AgencyCCVendorNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AgencyCCCardNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ProductCode" Type="Byte" Nullable="false" />
+          <Property Name="VatCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CurrencyCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="PassengerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ValidatingCarrier" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="TicketNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ETicket" Type="Boolean" Nullable="false" />
+          <Property Name="Exchange" Type="Boolean" Nullable="false" />
+          <Property Name="ADM" Type="Boolean" Nullable="false" />
+          <Property Name="OriginalTicket" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OriginalInvoice" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PublishedFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="SellingFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="ReferenceFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="LowFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Tax1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Tax2" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Tax3" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Tax4" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Penalty" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="GrossAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="CommissionAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="VatOnCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="PstOnCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="PenaltyCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="NetFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="NetFareValueCode" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="BookingAgentCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="TicketingAgentCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="OSAgentCommission1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="OSAgentCommission2" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="International" Type="Boolean" Nullable="false" />
+          <Property Name="ExceptionCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="GSANumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PurchaseOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FreeFieldA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FreeFieldB" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="FreeFieldC" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="FreeFieldD" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="RoutingCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TourCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GroupCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TransactionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Source" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TravelDate" Type="DateTime" Precision="3" />
+          <Property Name="ReturnDate" Type="DateTime" Precision="3" />
+          <Property Name="NumberOfDays" Type="Int16" Nullable="false" />
+          <Property Name="NumberOfPassengers" Type="Int16" Nullable="false" />
+          <Property Name="NumberOfItems" Type="Int16" Nullable="false" />
+          <Property Name="ItemType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CityCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="VoucherRate" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="RateType" Type="Byte" Nullable="false" />
+          <Property Name="Status" Type="Byte" Nullable="false" />
+          <Property Name="VoucherStatus" Type="Byte" Nullable="false" />
+          <Property Name="APDueDate" Type="DateTime" Precision="3" />
+          <Property Name="AddedBy" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IfInvoices">
+          <Key>
+            <PropertyRef Name="InvoiceID" />
+          </Key>
+          <Property Name="InvoiceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Record" Type="Int32" Nullable="false" />
+          <Property Name="IfMenu" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="TransactionType" Type="Byte" Nullable="false" />
+          <Property Name="InvoiceNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BranchNumber" Type="Int16" Nullable="false" />
+          <Property Name="IataNumber" Type="Int32" Nullable="false" />
+          <Property Name="Division" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProfileNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ProfilePhoneNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Department" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BookingDate" Type="DateTime" Precision="3" />
+          <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+          <Property Name="DueDate" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BookingAgentNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TicketingAgentNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="OSAgentNumber1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="OSAgentNumber2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="RecordLocator" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PrivateRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AddedBy" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PostNow" Type="Boolean" Nullable="false" />
+          <Property Name="Refresh" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IfPayments">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+          </Key>
+          <Property Name="PaymentID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceDetailID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="FormOfPayment" Type="Byte" Nullable="false" />
+          <Property Name="AccountNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BankNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CCID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Reference" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ExpirationDate" Type="DateTime" Precision="3" />
+          <Property Name="CardHolder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AuthorizationNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="CurrencyCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="IfSegments">
+          <Key>
+            <PropertyRef Name="SegmentID" />
+          </Key>
+          <Property Name="SegmentID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceDetailID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="LegNumber" Type="Byte" Nullable="false" />
+          <Property Name="DepartureCityCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="DepartureInfo" Type="DateTime" Precision="3" />
+          <Property Name="ArrivalCityCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ArrivalInfo" Type="DateTime" Precision="3" />
+          <Property Name="AirlineCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FlightNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ClassOfService" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="XO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DI" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FareBasis" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="LegPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Mileage" Type="Int32" Nullable="false" />
+          <Property Name="DepartureCityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ArrivalCityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AircraftType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MealService" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FlightDuration" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CheckinTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NumberOfStops" Type="Byte" Nullable="false" />
+          <Property Name="DepartureTerminal" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ArrivalTerminal" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SeatNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Segments">
+          <Key>
+            <PropertyRef Name="SegmentID" />
+          </Key>
+          <Property Name="SegmentID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="InvoiceDetailID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="LegNumber" Type="Byte" Nullable="false" />
+          <Property Name="DepartureCityCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="DepartureInfo" Type="DateTime" Precision="3" />
+          <Property Name="ArrivalCityCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ArrivalInfo" Type="DateTime" Precision="3" />
+          <Property Name="AirlineCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FlightNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ClassOfService" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="XO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DI" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FareBasis" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="LegPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Mileage" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TravComEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="APInvoices" EntityType="Self.APInvoices" />
+          <EntitySet Name="ARInvoiceBalances" EntityType="Self.ARInvoiceBalances" />
+          <EntitySet Name="ARInvoiceDetails" EntityType="Self.ARInvoiceDetails" />
+          <EntitySet Name="ARInvoices" EntityType="Self.ARInvoices" />
+          <EntitySet Name="IfInvoiceDetails" EntityType="Self.IfInvoiceDetails" />
+          <EntitySet Name="IfInvoices" EntityType="Self.IfInvoices" />
+          <EntitySet Name="IfPayments" EntityType="Self.IfPayments" />
+          <EntitySet Name="IfSegments" EntityType="Self.IfSegments" />
+          <EntitySet Name="Segments" EntityType="Self.Segments" />
+          <EntitySet Name="Airlines" EntityType="TravComModel.Airlines" />
+          <EntitySet Name="Profiles" EntityType="TravComModel.Profiles" />
+        </EntityContainer>
+        <EntityType Name="Airlines">
+          <Key>
+            <PropertyRef Name="AirlineID" />
+          </Key>
+          <Property Name="AirlineID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AirlineNumber" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="AirlineCode" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="AirlineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VATExempt" Type="Boolean" Nullable="false" />
+          <Property Name="PSTExempt" Type="Boolean" Nullable="false" />
+          <Property Name="Province" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Preferred" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Profiles">
+          <Key>
+            <PropertyRef Name="ProfileID" />
+          </Key>
+          <Property Name="ProfileID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProfileType" Type="Byte" Nullable="false" />
+          <Property Name="ProfileNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="InterfaceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccountType" Type="Byte" Nullable="false" />
+          <Property Name="Prefix" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Salutation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneType1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneType2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneType3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneType4" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneType5" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber5" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneSort1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneSort2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneSort3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneSort4" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneSort5" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Language" Type="Byte" Nullable="false" />
+          <Property Name="FirstDate" Type="DateTime" Precision="3" />
+          <Property Name="LastDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="Balance" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="AddedBy" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="SendEmail" Type="Boolean" Nullable="false" />
+          <Property Name="CBSync" Type="Boolean" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Branches" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TravComModelStoreContainer" CdmEntityContainer="TravComEntities">
+          <EntitySetMapping Name="APInvoices">
+            <EntityTypeMapping TypeName="TravComModel.APInvoices">
+              <MappingFragment StoreEntitySet="APInvoices">
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="ARInvoiceID" ColumnName="ARInvoiceID" />
+                <ScalarProperty Name="ARInvoiceDetailID" ColumnName="ARInvoiceDetailID" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="BranchNumber" ColumnName="BranchNumber" />
+                <ScalarProperty Name="ProfileNumber" ColumnName="ProfileNumber" />
+                <ScalarProperty Name="ProfileName" ColumnName="ProfileName" />
+                <ScalarProperty Name="ProfileAddress" ColumnName="ProfileAddress" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="PostingMonth" ColumnName="PostingMonth" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+                <ScalarProperty Name="VatAmount" ColumnName="VatAmount" />
+                <ScalarProperty Name="PstAmount" ColumnName="PstAmount" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+                <ScalarProperty Name="VatCode" ColumnName="VatCode" />
+                <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+                <ScalarProperty Name="PayableAccount" ColumnName="PayableAccount" />
+                <ScalarProperty Name="OnHold" ColumnName="OnHold" />
+                <ScalarProperty Name="MarkToPay" ColumnName="MarkToPay" />
+                <ScalarProperty Name="AmountToPay" ColumnName="AmountToPay" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="TicketNumber" ColumnName="TicketNumber" />
+                <ScalarProperty Name="InvoiceGroup" ColumnName="InvoiceGroup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ARInvoiceBalances">
+            <EntityTypeMapping TypeName="TravComModel.ARInvoiceBalances">
+              <MappingFragment StoreEntitySet="ARInvoiceBalances">
+                <ScalarProperty Name="InvoiceBalanceID" ColumnName="InvoiceBalanceID" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+                <ScalarProperty Name="VatAmount" ColumnName="VatAmount" />
+                <ScalarProperty Name="PstAmount" ColumnName="PstAmount" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+                <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+                <ScalarProperty Name="ReceivableAccount" ColumnName="ReceivableAccount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ARInvoiceDetails">
+            <EntityTypeMapping TypeName="TravComModel.ARInvoiceDetails">
+              <MappingFragment StoreEntitySet="ARInvoiceDetails">
+                <ScalarProperty Name="InvoiceDetailID" ColumnName="InvoiceDetailID" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="PostingMonth" ColumnName="PostingMonth" />
+                <ScalarProperty Name="SubmitTo" ColumnName="SubmitTo" />
+                <ScalarProperty Name="VendorNumber" ColumnName="VendorNumber" />
+                <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+                <ScalarProperty Name="VendorAddress" ColumnName="VendorAddress" />
+                <ScalarProperty Name="VendorPhone" ColumnName="VendorPhone" />
+                <ScalarProperty Name="VendorFax" ColumnName="VendorFax" />
+                <ScalarProperty Name="VendorEmail" ColumnName="VendorEmail" />
+                <ScalarProperty Name="ChainCode" ColumnName="ChainCode" />
+                <ScalarProperty Name="PropertyCode" ColumnName="PropertyCode" />
+                <ScalarProperty Name="CommissionClientNumber" ColumnName="CommissionClientNumber" />
+                <ScalarProperty Name="AgencyCCVendorNumber" ColumnName="AgencyCCVendorNumber" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="VatCode" ColumnName="VatCode" />
+                <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+                <ScalarProperty Name="PassengerName" ColumnName="PassengerName" />
+                <ScalarProperty Name="ValidatingCarrier" ColumnName="ValidatingCarrier" />
+                <ScalarProperty Name="TicketNumber" ColumnName="TicketNumber" />
+                <ScalarProperty Name="ETicket" ColumnName="ETicket" />
+                <ScalarProperty Name="Exchange" ColumnName="Exchange" />
+                <ScalarProperty Name="ADM" ColumnName="ADM" />
+                <ScalarProperty Name="OriginalTicket" ColumnName="OriginalTicket" />
+                <ScalarProperty Name="OriginalInvoice" ColumnName="OriginalInvoice" />
+                <ScalarProperty Name="PublishedFare" ColumnName="PublishedFare" />
+                <ScalarProperty Name="SellingFare" ColumnName="SellingFare" />
+                <ScalarProperty Name="ReferenceFare" ColumnName="ReferenceFare" />
+                <ScalarProperty Name="LowFare" ColumnName="LowFare" />
+                <ScalarProperty Name="Tax1" ColumnName="Tax1" />
+                <ScalarProperty Name="Tax2" ColumnName="Tax2" />
+                <ScalarProperty Name="Tax3" ColumnName="Tax3" />
+                <ScalarProperty Name="Tax4" ColumnName="Tax4" />
+                <ScalarProperty Name="Penalty" ColumnName="Penalty" />
+                <ScalarProperty Name="GrossAmount" ColumnName="GrossAmount" />
+                <ScalarProperty Name="CommissionAmount" ColumnName="CommissionAmount" />
+                <ScalarProperty Name="VatOnCommission" ColumnName="VatOnCommission" />
+                <ScalarProperty Name="PstOnCommission" ColumnName="PstOnCommission" />
+                <ScalarProperty Name="PenaltyCommission" ColumnName="PenaltyCommission" />
+                <ScalarProperty Name="NetFare" ColumnName="NetFare" />
+                <ScalarProperty Name="NetFareValueCode" ColumnName="NetFareValueCode" />
+                <ScalarProperty Name="BookingAgentCommission" ColumnName="BookingAgentCommission" />
+                <ScalarProperty Name="TicketingAgentCommission" ColumnName="TicketingAgentCommission" />
+                <ScalarProperty Name="OSAgentCommission1" ColumnName="OSAgentCommission1" />
+                <ScalarProperty Name="OSAgentCommission2" ColumnName="OSAgentCommission2" />
+                <ScalarProperty Name="International" ColumnName="International" />
+                <ScalarProperty Name="ExceptionCode" ColumnName="ExceptionCode" />
+                <ScalarProperty Name="GSANumber" ColumnName="GSANumber" />
+                <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
+                <ScalarProperty Name="FreeFieldA" ColumnName="FreeFieldA" />
+                <ScalarProperty Name="FreeFieldB" ColumnName="FreeFieldB" />
+                <ScalarProperty Name="FreeFieldC" ColumnName="FreeFieldC" />
+                <ScalarProperty Name="FreeFieldD" ColumnName="FreeFieldD" />
+                <ScalarProperty Name="RoutingCode" ColumnName="RoutingCode" />
+                <ScalarProperty Name="TourCode" ColumnName="TourCode" />
+                <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+                <ScalarProperty Name="TransactionCode" ColumnName="TransactionCode" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="TravelDate" ColumnName="TravelDate" />
+                <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+                <ScalarProperty Name="NumberOfDays" ColumnName="NumberOfDays" />
+                <ScalarProperty Name="NumberOfPassengers" ColumnName="NumberOfPassengers" />
+                <ScalarProperty Name="NumberOfItems" ColumnName="NumberOfItems" />
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+                <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+                <ScalarProperty Name="VoucherRate" ColumnName="VoucherRate" />
+                <ScalarProperty Name="RateType" ColumnName="RateType" />
+                <ScalarProperty Name="VoucherStatus" ColumnName="VoucherStatus" />
+                <ScalarProperty Name="FormOfPayment" ColumnName="FormOfPayment" />
+                <ScalarProperty Name="CCID" ColumnName="CCID" />
+                <ScalarProperty Name="CreditCardNumber" ColumnName="CreditCardNumber" />
+                <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+                <ScalarProperty Name="APDueDate" ColumnName="APDueDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="GWExported" ColumnName="GWExported" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ARInvoices">
+            <EntityTypeMapping TypeName="TravComModel.ARInvoices">
+              <MappingFragment StoreEntitySet="ARInvoices">
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="BranchNumber" ColumnName="BranchNumber" />
+                <ScalarProperty Name="IataNumber" ColumnName="IataNumber" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="ProfileNumber" ColumnName="ProfileNumber" />
+                <ScalarProperty Name="ProfileName" ColumnName="ProfileName" />
+                <ScalarProperty Name="ProfileAddress" ColumnName="ProfileAddress" />
+                <ScalarProperty Name="ProfileEmail" ColumnName="ProfileEmail" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BookingAgentNumber" ColumnName="BookingAgentNumber" />
+                <ScalarProperty Name="TicketingAgentNumber" ColumnName="TicketingAgentNumber" />
+                <ScalarProperty Name="OSAgentNumber1" ColumnName="OSAgentNumber1" />
+                <ScalarProperty Name="OSAgentNumber2" ColumnName="OSAgentNumber2" />
+                <ScalarProperty Name="RecordLocator" ColumnName="RecordLocator" />
+                <ScalarProperty Name="InvoiceGroup" ColumnName="InvoiceGroup" />
+                <ScalarProperty Name="VatCode" ColumnName="VatCode" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="InvoiceRemarks" ColumnName="InvoiceRemarks" />
+                <ScalarProperty Name="PrivateRemarks" ColumnName="PrivateRemarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IfInvoiceDetails">
+            <EntityTypeMapping TypeName="TravComModel.IfInvoiceDetails">
+              <MappingFragment StoreEntitySet="IfInvoiceDetails">
+                <ScalarProperty Name="InvoiceDetailID" ColumnName="InvoiceDetailID" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="PostingMonth" ColumnName="PostingMonth" />
+                <ScalarProperty Name="SubmitTo" ColumnName="SubmitTo" />
+                <ScalarProperty Name="VendorNumber" ColumnName="VendorNumber" />
+                <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+                <ScalarProperty Name="VendorAddress" ColumnName="VendorAddress" />
+                <ScalarProperty Name="VendorPhone" ColumnName="VendorPhone" />
+                <ScalarProperty Name="VendorFax" ColumnName="VendorFax" />
+                <ScalarProperty Name="VendorEmail" ColumnName="VendorEmail" />
+                <ScalarProperty Name="ChainCode" ColumnName="ChainCode" />
+                <ScalarProperty Name="PropertyCode" ColumnName="PropertyCode" />
+                <ScalarProperty Name="CommissionClientNumber" ColumnName="CommissionClientNumber" />
+                <ScalarProperty Name="AgencyCCVendorNumber" ColumnName="AgencyCCVendorNumber" />
+                <ScalarProperty Name="AgencyCCCardNumber" ColumnName="AgencyCCCardNumber" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="VatCode" ColumnName="VatCode" />
+                <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+                <ScalarProperty Name="PassengerName" ColumnName="PassengerName" />
+                <ScalarProperty Name="ValidatingCarrier" ColumnName="ValidatingCarrier" />
+                <ScalarProperty Name="TicketNumber" ColumnName="TicketNumber" />
+                <ScalarProperty Name="ETicket" ColumnName="ETicket" />
+                <ScalarProperty Name="Exchange" ColumnName="Exchange" />
+                <ScalarProperty Name="ADM" ColumnName="ADM" />
+                <ScalarProperty Name="OriginalTicket" ColumnName="OriginalTicket" />
+                <ScalarProperty Name="OriginalInvoice" ColumnName="OriginalInvoice" />
+                <ScalarProperty Name="PublishedFare" ColumnName="PublishedFare" />
+                <ScalarProperty Name="SellingFare" ColumnName="SellingFare" />
+                <ScalarProperty Name="ReferenceFare" ColumnName="ReferenceFare" />
+                <ScalarProperty Name="LowFare" ColumnName="LowFare" />
+                <ScalarProperty Name="Tax1" ColumnName="Tax1" />
+                <ScalarProperty Name="Tax2" ColumnName="Tax2" />
+                <ScalarProperty Name="Tax3" ColumnName="Tax3" />
+                <ScalarProperty Name="Tax4" ColumnName="Tax4" />
+                <ScalarProperty Name="Penalty" ColumnName="Penalty" />
+                <ScalarProperty Name="GrossAmount" ColumnName="GrossAmount" />
+                <ScalarProperty Name="CommissionAmount" ColumnName="CommissionAmount" />
+                <ScalarProperty Name="VatOnCommission" ColumnName="VatOnCommission" />
+                <ScalarProperty Name="PstOnCommission" ColumnName="PstOnCommission" />
+                <ScalarProperty Name="PenaltyCommission" ColumnName="PenaltyCommission" />
+                <ScalarProperty Name="NetFare" ColumnName="NetFare" />
+                <ScalarProperty Name="NetFareValueCode" ColumnName="NetFareValueCode" />
+                <ScalarProperty Name="BookingAgentCommission" ColumnName="BookingAgentCommission" />
+                <ScalarProperty Name="TicketingAgentCommission" ColumnName="TicketingAgentCommission" />
+                <ScalarProperty Name="OSAgentCommission1" ColumnName="OSAgentCommission1" />
+                <ScalarProperty Name="OSAgentCommission2" ColumnName="OSAgentCommission2" />
+                <ScalarProperty Name="International" ColumnName="International" />
+                <ScalarProperty Name="ExceptionCode" ColumnName="ExceptionCode" />
+                <ScalarProperty Name="GSANumber" ColumnName="GSANumber" />
+                <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
+                <ScalarProperty Name="FreeFieldA" ColumnName="FreeFieldA" />
+                <ScalarProperty Name="FreeFieldB" ColumnName="FreeFieldB" />
+                <ScalarProperty Name="FreeFieldC" ColumnName="FreeFieldC" />
+                <ScalarProperty Name="FreeFieldD" ColumnName="FreeFieldD" />
+                <ScalarProperty Name="RoutingCode" ColumnName="RoutingCode" />
+                <ScalarProperty Name="TourCode" ColumnName="TourCode" />
+                <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+                <ScalarProperty Name="TransactionCode" ColumnName="TransactionCode" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="TravelDate" ColumnName="TravelDate" />
+                <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+                <ScalarProperty Name="NumberOfDays" ColumnName="NumberOfDays" />
+                <ScalarProperty Name="NumberOfPassengers" ColumnName="NumberOfPassengers" />
+                <ScalarProperty Name="NumberOfItems" ColumnName="NumberOfItems" />
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+                <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+                <ScalarProperty Name="VoucherRate" ColumnName="VoucherRate" />
+                <ScalarProperty Name="RateType" ColumnName="RateType" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="VoucherStatus" ColumnName="VoucherStatus" />
+                <ScalarProperty Name="APDueDate" ColumnName="APDueDate" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IfInvoices">
+            <EntityTypeMapping TypeName="TravComModel.IfInvoices">
+              <MappingFragment StoreEntitySet="IfInvoices">
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="Record" ColumnName="Record" />
+                <ScalarProperty Name="IfMenu" ColumnName="IfMenu" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="BranchNumber" ColumnName="BranchNumber" />
+                <ScalarProperty Name="IataNumber" ColumnName="IataNumber" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="ProfileNumber" ColumnName="ProfileNumber" />
+                <ScalarProperty Name="ProfileName" ColumnName="ProfileName" />
+                <ScalarProperty Name="ProfileAddress" ColumnName="ProfileAddress" />
+                <ScalarProperty Name="ProfilePhoneNumber" ColumnName="ProfilePhoneNumber" />
+                <ScalarProperty Name="ProfileEmail" ColumnName="ProfileEmail" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BookingAgentNumber" ColumnName="BookingAgentNumber" />
+                <ScalarProperty Name="TicketingAgentNumber" ColumnName="TicketingAgentNumber" />
+                <ScalarProperty Name="OSAgentNumber1" ColumnName="OSAgentNumber1" />
+                <ScalarProperty Name="OSAgentNumber2" ColumnName="OSAgentNumber2" />
+                <ScalarProperty Name="RecordLocator" ColumnName="RecordLocator" />
+                <ScalarProperty Name="InvoiceGroup" ColumnName="InvoiceGroup" />
+                <ScalarProperty Name="InvoiceRemarks" ColumnName="InvoiceRemarks" />
+                <ScalarProperty Name="PrivateRemarks" ColumnName="PrivateRemarks" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="PostNow" ColumnName="PostNow" />
+                <ScalarProperty Name="Refresh" ColumnName="Refresh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IfPayments">
+            <EntityTypeMapping TypeName="TravComModel.IfPayments">
+              <MappingFragment StoreEntitySet="IfPayments">
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+                <ScalarProperty Name="InvoiceDetailID" ColumnName="InvoiceDetailID" />
+                <ScalarProperty Name="FormOfPayment" ColumnName="FormOfPayment" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="BankNumber" ColumnName="BankNumber" />
+                <ScalarProperty Name="CCID" ColumnName="CCID" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="CardHolder" ColumnName="CardHolder" />
+                <ScalarProperty Name="AuthorizationNumber" ColumnName="AuthorizationNumber" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IfSegments">
+            <EntityTypeMapping TypeName="TravComModel.IfSegments">
+              <MappingFragment StoreEntitySet="IfSegments">
+                <ScalarProperty Name="SegmentID" ColumnName="SegmentID" />
+                <ScalarProperty Name="InvoiceDetailID" ColumnName="InvoiceDetailID" />
+                <ScalarProperty Name="LegNumber" ColumnName="LegNumber" />
+                <ScalarProperty Name="DepartureCityCode" ColumnName="DepartureCityCode" />
+                <ScalarProperty Name="DepartureInfo" ColumnName="DepartureInfo" />
+                <ScalarProperty Name="ArrivalCityCode" ColumnName="ArrivalCityCode" />
+                <ScalarProperty Name="ArrivalInfo" ColumnName="ArrivalInfo" />
+                <ScalarProperty Name="AirlineCode" ColumnName="AirlineCode" />
+                <ScalarProperty Name="FlightNumber" ColumnName="FlightNumber" />
+                <ScalarProperty Name="ClassOfService" ColumnName="ClassOfService" />
+                <ScalarProperty Name="XO" ColumnName="XO" />
+                <ScalarProperty Name="DI" ColumnName="DI" />
+                <ScalarProperty Name="FareBasis" ColumnName="FareBasis" />
+                <ScalarProperty Name="LegPrice" ColumnName="LegPrice" />
+                <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+                <ScalarProperty Name="DepartureCityName" ColumnName="DepartureCityName" />
+                <ScalarProperty Name="ArrivalCityName" ColumnName="ArrivalCityName" />
+                <ScalarProperty Name="AircraftType" ColumnName="AircraftType" />
+                <ScalarProperty Name="MealService" ColumnName="MealService" />
+                <ScalarProperty Name="FlightDuration" ColumnName="FlightDuration" />
+                <ScalarProperty Name="CheckinTime" ColumnName="CheckinTime" />
+                <ScalarProperty Name="NumberOfStops" ColumnName="NumberOfStops" />
+                <ScalarProperty Name="DepartureTerminal" ColumnName="DepartureTerminal" />
+                <ScalarProperty Name="ArrivalTerminal" ColumnName="ArrivalTerminal" />
+                <ScalarProperty Name="SeatNo" ColumnName="SeatNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Segments">
+            <EntityTypeMapping TypeName="TravComModel.Segments">
+              <MappingFragment StoreEntitySet="Segments">
+                <ScalarProperty Name="SegmentID" ColumnName="SegmentID" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="InvoiceDetailID" ColumnName="InvoiceDetailID" />
+                <ScalarProperty Name="LegNumber" ColumnName="LegNumber" />
+                <ScalarProperty Name="DepartureCityCode" ColumnName="DepartureCityCode" />
+                <ScalarProperty Name="DepartureInfo" ColumnName="DepartureInfo" />
+                <ScalarProperty Name="ArrivalCityCode" ColumnName="ArrivalCityCode" />
+                <ScalarProperty Name="ArrivalInfo" ColumnName="ArrivalInfo" />
+                <ScalarProperty Name="AirlineCode" ColumnName="AirlineCode" />
+                <ScalarProperty Name="FlightNumber" ColumnName="FlightNumber" />
+                <ScalarProperty Name="ClassOfService" ColumnName="ClassOfService" />
+                <ScalarProperty Name="XO" ColumnName="XO" />
+                <ScalarProperty Name="DI" ColumnName="DI" />
+                <ScalarProperty Name="FareBasis" ColumnName="FareBasis" />
+                <ScalarProperty Name="LegPrice" ColumnName="LegPrice" />
+                <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Airlines">
+            <EntityTypeMapping TypeName="TravComModel.Airlines">
+              <MappingFragment StoreEntitySet="Airlines">
+                <ScalarProperty Name="Preferred" ColumnName="Preferred" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="PSTExempt" ColumnName="PSTExempt" />
+                <ScalarProperty Name="VATExempt" ColumnName="VATExempt" />
+                <ScalarProperty Name="AirlineName" ColumnName="AirlineName" />
+                <ScalarProperty Name="AirlineCode" ColumnName="AirlineCode" />
+                <ScalarProperty Name="AirlineNumber" ColumnName="AirlineNumber" />
+                <ScalarProperty Name="AirlineID" ColumnName="AirlineID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profiles">
+            <EntityTypeMapping TypeName="TravComModel.Profiles">
+              <MappingFragment StoreEntitySet="Profiles">
+                <ScalarProperty Name="Branches" ColumnName="Branches" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="CBSync" ColumnName="CBSync" />
+                <ScalarProperty Name="SendEmail" ColumnName="SendEmail" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="LastDate" ColumnName="LastDate" />
+                <ScalarProperty Name="FirstDate" ColumnName="FirstDate" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="PhoneSort5" ColumnName="PhoneSort5" />
+                <ScalarProperty Name="PhoneSort4" ColumnName="PhoneSort4" />
+                <ScalarProperty Name="PhoneSort3" ColumnName="PhoneSort3" />
+                <ScalarProperty Name="PhoneSort2" ColumnName="PhoneSort2" />
+                <ScalarProperty Name="PhoneSort1" ColumnName="PhoneSort1" />
+                <ScalarProperty Name="PhoneNumber5" ColumnName="PhoneNumber5" />
+                <ScalarProperty Name="PhoneNumber4" ColumnName="PhoneNumber4" />
+                <ScalarProperty Name="PhoneNumber3" ColumnName="PhoneNumber3" />
+                <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+                <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber1" />
+                <ScalarProperty Name="PhoneType5" ColumnName="PhoneType5" />
+                <ScalarProperty Name="PhoneType4" ColumnName="PhoneType4" />
+                <ScalarProperty Name="PhoneType3" ColumnName="PhoneType3" />
+                <ScalarProperty Name="PhoneType2" ColumnName="PhoneType2" />
+                <ScalarProperty Name="PhoneType1" ColumnName="PhoneType1" />
+                <ScalarProperty Name="Salutation" ColumnName="Salutation" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+                <ScalarProperty Name="InterfaceCode" ColumnName="InterfaceCode" />
+                <ScalarProperty Name="ProfileNumber" ColumnName="ProfileNumber" />
+                <ScalarProperty Name="ProfileType" ColumnName="ProfileType" />
+                <ScalarProperty Name="ProfileID" ColumnName="ProfileID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TravComModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="APInvoices">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ARInvoiceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ARInvoiceDetailID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="InvoiceNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="BranchNumber" Type="Int16" Nullable="false" />
+    <Property Name="ProfileNumber" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="ProfileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProfileAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+    <Property Name="DueDate" Type="DateTime" Precision="3" />
+    <Property Name="SystemDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="PostingMonth" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="VatAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="PstAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="CurrencyCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="VatCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="ExchangeRate" Type="Double" Nullable="false" />
+    <Property Name="PayableAccount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OnHold" Type="Boolean" Nullable="false" />
+    <Property Name="MarkToPay" Type="Boolean" Nullable="false" />
+    <Property Name="AmountToPay" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="AddedBy" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TicketNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ARInvoiceBalances">
+    <Key>
+      <PropertyRef Name="InvoiceBalanceID" />
+    </Key>
+    <Property Name="InvoiceBalanceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="InvoiceAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="VatAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="PstAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="CurrencyCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ExchangeRate" Type="Double" Nullable="false" />
+    <Property Name="ReceivableAccount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ARInvoiceDetails">
+    <Key>
+      <PropertyRef Name="InvoiceDetailID" />
+    </Key>
+    <Property Name="InvoiceDetailID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ReservationID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="TransactionType" Type="Byte" Nullable="false" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+    <Property Name="SystemDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="PostingMonth" Type="Int32" Nullable="false" />
+    <Property Name="SubmitTo" Type="Byte" Nullable="false" />
+    <Property Name="VendorNumber" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="VendorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VendorAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="VendorPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VendorFax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VendorEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ChainCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="PropertyCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CommissionClientNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AgencyCCVendorNumber" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="ProductCode" Type="Byte" Nullable="false" />
+    <Property Name="VatCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="CurrencyCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="PassengerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ValidatingCarrier" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="TicketNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ETicket" Type="Boolean" Nullable="false" />
+    <Property Name="Exchange" Type="Boolean" Nullable="false" />
+    <Property Name="ADM" Type="Boolean" Nullable="false" />
+    <Property Name="OriginalTicket" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OriginalInvoice" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PublishedFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="SellingFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ReferenceFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="LowFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Tax1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Tax2" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Tax3" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Tax4" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Penalty" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="GrossAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="CommissionAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="VatOnCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="PstOnCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="PenaltyCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="NetFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="NetFareValueCode" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BookingAgentCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="TicketingAgentCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="OSAgentCommission1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="OSAgentCommission2" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="International" Type="Boolean" Nullable="false" />
+    <Property Name="ExceptionCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="GSANumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PurchaseOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FreeFieldA" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FreeFieldB" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FreeFieldC" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FreeFieldD" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="RoutingCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TourCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GroupCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Source" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TravelDate" Type="DateTime" Precision="3" />
+    <Property Name="ReturnDate" Type="DateTime" Precision="3" />
+    <Property Name="NumberOfDays" Type="Int16" Nullable="false" />
+    <Property Name="NumberOfPassengers" Type="Int16" Nullable="false" />
+    <Property Name="NumberOfItems" Type="Int16" Nullable="false" />
+    <Property Name="ItemType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CityCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="VoucherRate" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="RateType" Type="Byte" Nullable="false" />
+    <Property Name="VoucherStatus" Type="Byte" Nullable="false" />
+    <Property Name="FormOfPayment" Type="Byte" Nullable="false" />
+    <Property Name="CCID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="CreditCardNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CreditAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="APDueDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Byte" Nullable="false" />
+    <Property Name="AddedBy" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="GWExported" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ARInvoices">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="BranchNumber" Type="Int16" Nullable="false" />
+    <Property Name="IataNumber" Type="Int32" Nullable="false" />
+    <Property Name="Division" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProfileNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ProfileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProfileAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ProfileEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Department" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BookingDate" Type="DateTime" Precision="3" />
+    <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+    <Property Name="DueDate" Type="DateTime" Precision="3" />
+    <Property Name="SystemDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BookingAgentNumber" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="TicketingAgentNumber" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="OSAgentNumber1" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="OSAgentNumber2" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="RecordLocator" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VatCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+    <Property Name="AddedBy" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="InvoiceRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PrivateRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="IfInvoiceDetails">
+    <Key>
+      <PropertyRef Name="InvoiceDetailID" />
+    </Key>
+    <Property Name="InvoiceDetailID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ReservationID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="TransactionType" Type="Byte" Nullable="false" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+    <Property Name="PostingMonth" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SubmitTo" Type="Byte" Nullable="false" />
+    <Property Name="VendorNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VendorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VendorAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="VendorPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VendorFax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VendorEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ChainCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="PropertyCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CommissionClientNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AgencyCCVendorNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AgencyCCCardNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ProductCode" Type="Byte" Nullable="false" />
+    <Property Name="VatCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="CurrencyCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="PassengerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ValidatingCarrier" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="TicketNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ETicket" Type="Boolean" Nullable="false" />
+    <Property Name="Exchange" Type="Boolean" Nullable="false" />
+    <Property Name="ADM" Type="Boolean" Nullable="false" />
+    <Property Name="OriginalTicket" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OriginalInvoice" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PublishedFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="SellingFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ReferenceFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="LowFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Tax1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Tax2" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Tax3" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Tax4" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Penalty" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="GrossAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="CommissionAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="VatOnCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="PstOnCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="PenaltyCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="NetFare" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="NetFareValueCode" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BookingAgentCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="TicketingAgentCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="OSAgentCommission1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="OSAgentCommission2" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="International" Type="Boolean" Nullable="false" />
+    <Property Name="ExceptionCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="GSANumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PurchaseOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FreeFieldA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FreeFieldB" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FreeFieldC" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FreeFieldD" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="RoutingCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TourCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GroupCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Source" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TravelDate" Type="DateTime" Precision="3" />
+    <Property Name="ReturnDate" Type="DateTime" Precision="3" />
+    <Property Name="NumberOfDays" Type="Int16" Nullable="false" />
+    <Property Name="NumberOfPassengers" Type="Int16" Nullable="false" />
+    <Property Name="NumberOfItems" Type="Int16" Nullable="false" />
+    <Property Name="ItemType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CityCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="VoucherRate" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="RateType" Type="Byte" Nullable="false" />
+    <Property Name="Status" Type="Byte" Nullable="false" />
+    <Property Name="VoucherStatus" Type="Byte" Nullable="false" />
+    <Property Name="APDueDate" Type="DateTime" Precision="3" />
+    <Property Name="AddedBy" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IfInvoices">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Record" Type="Int32" Nullable="false" />
+    <Property Name="IfMenu" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionType" Type="Byte" Nullable="false" />
+    <Property Name="InvoiceNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="BranchNumber" Type="Int16" Nullable="false" />
+    <Property Name="IataNumber" Type="Int32" Nullable="false" />
+    <Property Name="Division" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProfileNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ProfileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProfileAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ProfilePhoneNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ProfileEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Department" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BookingDate" Type="DateTime" Precision="3" />
+    <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+    <Property Name="DueDate" Type="DateTime" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BookingAgentNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TicketingAgentNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OSAgentNumber1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OSAgentNumber2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RecordLocator" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PrivateRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AddedBy" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="PostNow" Type="Boolean" Nullable="false" />
+    <Property Name="Refresh" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IfPayments">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceDetailID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FormOfPayment" Type="Byte" Nullable="false" />
+    <Property Name="AccountNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="BankNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CCID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Reference" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ExpirationDate" Type="DateTime" Precision="3" />
+    <Property Name="CardHolder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AuthorizationNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="CurrencyCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="IfSegments">
+    <Key>
+      <PropertyRef Name="SegmentID" />
+    </Key>
+    <Property Name="SegmentID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceDetailID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="LegNumber" Type="Byte" Nullable="false" />
+    <Property Name="DepartureCityCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="DepartureInfo" Type="DateTime" Precision="3" />
+    <Property Name="ArrivalCityCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="ArrivalInfo" Type="DateTime" Precision="3" />
+    <Property Name="AirlineCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="FlightNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="ClassOfService" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="XO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DI" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FareBasis" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="LegPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Mileage" Type="Int32" Nullable="false" />
+    <Property Name="DepartureCityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ArrivalCityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AircraftType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MealService" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FlightDuration" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CheckinTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NumberOfStops" Type="Byte" Nullable="false" />
+    <Property Name="DepartureTerminal" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ArrivalTerminal" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SeatNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Segments">
+    <Key>
+      <PropertyRef Name="SegmentID" />
+    </Key>
+    <Property Name="SegmentID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="InvoiceDetailID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="LegNumber" Type="Byte" Nullable="false" />
+    <Property Name="DepartureCityCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="DepartureInfo" Type="DateTime" Precision="3" />
+    <Property Name="ArrivalCityCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="ArrivalInfo" Type="DateTime" Precision="3" />
+    <Property Name="AirlineCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="FlightNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="ClassOfService" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="XO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DI" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FareBasis" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="LegPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Mileage" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="TravComEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="APInvoices" EntityType="Self.APInvoices" />
+    <EntitySet Name="ARInvoiceBalances" EntityType="Self.ARInvoiceBalances" />
+    <EntitySet Name="ARInvoiceDetails" EntityType="Self.ARInvoiceDetails" />
+    <EntitySet Name="ARInvoices" EntityType="Self.ARInvoices" />
+    <EntitySet Name="IfInvoiceDetails" EntityType="Self.IfInvoiceDetails" />
+    <EntitySet Name="IfInvoices" EntityType="Self.IfInvoices" />
+    <EntitySet Name="IfPayments" EntityType="Self.IfPayments" />
+    <EntitySet Name="IfSegments" EntityType="Self.IfSegments" />
+    <EntitySet Name="Segments" EntityType="Self.Segments" />
+    <EntitySet Name="Airlines" EntityType="TravComModel.Airlines" />
+    <EntitySet Name="Profiles" EntityType="TravComModel.Profiles" />
+  </EntityContainer>
+  <EntityType Name="Airlines">
+    <Key>
+      <PropertyRef Name="AirlineID" />
+    </Key>
+    <Property Name="AirlineID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AirlineNumber" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="AirlineCode" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="AirlineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VATExempt" Type="Boolean" Nullable="false" />
+    <Property Name="PSTExempt" Type="Boolean" Nullable="false" />
+    <Property Name="Province" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Preferred" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Profiles">
+    <Key>
+      <PropertyRef Name="ProfileID" />
+    </Key>
+    <Property Name="ProfileID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProfileType" Type="Byte" Nullable="false" />
+    <Property Name="ProfileNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="InterfaceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AccountType" Type="Byte" Nullable="false" />
+    <Property Name="Prefix" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Salutation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneType1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneType2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneType3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneType4" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneType5" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber5" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneSort1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneSort2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneSort3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneSort4" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneSort5" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Language" Type="Byte" Nullable="false" />
+    <Property Name="FirstDate" Type="DateTime" Precision="3" />
+    <Property Name="LastDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="Balance" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="AddedBy" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="SendEmail" Type="Boolean" Nullable="false" />
+    <Property Name="CBSync" Type="Boolean" Nullable="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Branches" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>
