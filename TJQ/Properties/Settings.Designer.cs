@@ -106,5 +106,29 @@ namespace TJQ.Properties {
                 this["DefaultOID"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Username31D7 {
+            get {
+                return ((string)(this["Username31D7"]));
+            }
+            set {
+                this["Username31D7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Password31D7 {
+            get {
+                return ((string)(this["Password31D7"]));
+            }
+            set {
+                this["Password31D7"] = value;
+            }
+        }
     }
 }

@@ -14,11 +14,12 @@ namespace TJQ
             "GES", "IGN", "ILO", "IPE", "JOL", "KLO", "LAO", "CEB", "LGP", "LBX"
         };
 
-        public bool Export(List<TJQModel> TJQ210M, List<TJQModel> TJQ3501, List<TJQModel> TJQ3502, string date, string path)
+        public bool Export(List<TJQModel> TJQ210M, List<TJQModel> TJQ3501, List<TJQModel> TJQ3502,
+            List<TJQModel> TJQ31D7, string date, string path)
         {
             var excelApp = new Microsoft.Office.Interop.Excel.Application();
 
-            excelApp.SheetsInNewWorkbook = 3;
+            excelApp.SheetsInNewWorkbook = 4;
 
             var excelWorkBook = excelApp.Workbooks.Add();
 
@@ -33,6 +34,10 @@ namespace TJQ
             var excelWorkSheetMNLPH3502 = new Microsoft.Office.Interop.Excel.Worksheet();
 
             excelWorkSheetMNLPH3502 = excelWorkBook.Worksheets.Item[3];
+
+            var excelWorkSheetMNLPH31D7 = new Microsoft.Office.Interop.Excel.Worksheet();
+
+            excelWorkSheetMNLPH31D7 = excelWorkBook.Worksheets.Item[4];
 
             //===================MNLPH210M=======================
             excelWorkSheetMNLPH210M.Name = "MNLPH210M";
@@ -431,6 +436,138 @@ namespace TJQ
                     excelWorkSheetMNLPH3502.Cells[ctr + 5, 17] = TJQ3502[ctr].TAX;
                 }
             }//For loop for MNLPH3502
+
+            //=====================MNLPH31D7========================
+            excelWorkSheetMNLPH31D7.Name = "MNLPH31D7";
+
+            //=====================HEADER=======================
+            format = excelWorkSheetMNLPH31D7.Range[excelWorkSheetMNLPH31D7.Cells[4, 1], excelWorkSheetMNLPH31D7.Cells[4, 22]];
+
+            format.Font.Bold = true;
+
+            format.Font.Size = 11;
+
+            format.Font.Name = "Calibri";
+
+            format.ColumnWidth = 15;
+
+            format.HorizontalAlignment = -4108;
+
+            format.VerticalAlignment = -4108;
+
+            format.Interior.Color = ColorTranslator.ToOle(Color.FromArgb(41, 57, 85));
+
+            format.Font.Color = ColorTranslator.ToOle(Color.FromArgb(214, 219, 233));
+
+            excelWorkSheetMNLPH31D7.Cells[1, 1] = "TJQ Report - 31D7";
+
+            excelWorkSheetMNLPH31D7.Cells[2, 1] = date;
+
+            excelWorkSheetMNLPH31D7.Cells[4, 1] = "TICKET NO";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 2] = "DATE ISSUED";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 3] = "RECORD LOCATOR";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 4] = "BOOKING DATE";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 5] = "INVOICE NO";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 6] = "INVOICE DATE";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 7] = "AIRLINE CODE";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 8] = "CLIENT NO";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 9] = "CLIENT NAME";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 10] = "PAX NAME";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 11] = "ITINERARY";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 12] = "QUANTITY";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 13] = "CURRENCY";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 14] = "PUBLISH AMOUNT";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 15] = "NET AMOUNTH";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 16] = "COMMISSION";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 17] = "TOTAL TAX";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 18] = "NET PAYABLE";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 19] = "BOOKING AGENT";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 20] = "PH TAX";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 21] = "STATUS";
+
+            excelWorkSheetMNLPH31D7.Cells[4, 22] = "OUTBOUND";
+
+            for(int ctr = 0; ctr < TJQ31D7.Count; ctr++)
+            {
+                var record = travcom.CheckIfPosted(TJQ31D7[ctr].DOCNO);
+
+                if(record == null)
+                {
+                    record = travcom.CheckIfUnPosted(TJQ31D7[ctr].DOCNO);
+                }
+
+                excelWorkSheetMNLPH31D7.Cells[ctr + 5, 21] = TJQ31D7[ctr].TRNC;
+
+                excelWorkSheetMNLPH31D7.Cells[ctr + 5, 1] = TJQ31D7[ctr].DOCNO;
+
+                excelWorkSheetMNLPH31D7.Cells[ctr + 5, 3] = TJQ31D7[ctr].RELOC;
+
+                if(record != null)
+                {
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 2] = record.InvoiceDate;
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 4] = record.BookingDate;
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 7] = record.AirlineCode;
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 8] = record.ProfileNo;
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 9] = record.ProfileName;
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 10] = record.PassengerName;
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 11] = record.DepartureCityCode + "-" + record.ArrivalCityCode;
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 12] = "1";
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 13] = record.CurrencyCode;
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 14] = record.PublishedFare;
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 15] = record.NetFare;
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 16] = record.CommissionAmount;
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 17] = (record.Tax1 + record.Tax2);
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 18] = record.NetPayable;
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 19] = record.FullName;
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 20] = record.Tax1;
+
+                    if(AirportCodePH.Contains(record.DepartureCityCode) && !AirportCodePH.Contains(record.ArrivalCityCode))
+                        excelWorkSheetMNLPH31D7.Cells[ctr + 5, 22] = "YES";
+                }
+                else //NO RECORD IN TRAVCOM
+                {
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 15] = excelWorkSheetMNLPH31D7.Cells[ctr + 5, 14] = TJQ31D7[ctr].AMOUNT;
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 16] = TJQ31D7[ctr].COMM;
+
+                    excelWorkSheetMNLPH31D7.Cells[ctr + 5, 17] = TJQ31D7[ctr].TAX;
+                }
+            }//For Lopp for MNLPH31D7
 
             //==============SAVE EXCEL FILE===================
             excelWorkBook.SaveAs(path, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookDefault);

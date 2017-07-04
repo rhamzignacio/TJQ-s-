@@ -39,6 +39,7 @@
             this.lblMessage = new System.Windows.Forms.Label();
             this.lblVersion = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.checkBoxMNLPH31D7 = new System.Windows.Forms.CheckBox();
             this.checkBoxMNLPH3502 = new System.Windows.Forms.CheckBox();
             this.checkBoxMNLPH3501 = new System.Windows.Forms.CheckBox();
             this.checkBoxMNLPH210M = new System.Windows.Forms.CheckBox();
@@ -98,6 +99,20 @@
             this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.lstView31D7 = new System.Windows.Forms.ListView();
+            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader40 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader41 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader42 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader43 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader44 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAmadeusMode = new System.Windows.Forms.Button();
             this.btnDatabaseMode = new System.Windows.Forms.Button();
             this.lblMode = new System.Windows.Forms.Label();
@@ -114,6 +129,7 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExportToExcel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDownloadManual)).BeginInit();
             this.SuspendLayout();
@@ -230,7 +246,7 @@
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(54, 13);
             this.lblVersion.TabIndex = 0;
-            this.lblVersion.Text = "1.2";
+            this.lblVersion.Text = "2.0";
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.lblVersion.Click += new System.EventHandler(this.lblVersion_Click);
             // 
@@ -239,6 +255,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(219)))), ((int)(((byte)(233)))));
+            this.panel3.Controls.Add(this.checkBoxMNLPH31D7);
             this.panel3.Controls.Add(this.checkBoxMNLPH3502);
             this.panel3.Controls.Add(this.checkBoxMNLPH3501);
             this.panel3.Controls.Add(this.checkBoxMNLPH210M);
@@ -258,6 +275,20 @@
             this.panel3.Size = new System.Drawing.Size(735, 87);
             this.panel3.TabIndex = 2;
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
+            // 
+            // checkBoxMNLPH31D7
+            // 
+            this.checkBoxMNLPH31D7.AutoSize = true;
+            this.checkBoxMNLPH31D7.Checked = true;
+            this.checkBoxMNLPH31D7.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxMNLPH31D7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxMNLPH31D7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.checkBoxMNLPH31D7.Location = new System.Drawing.Point(329, 7);
+            this.checkBoxMNLPH31D7.Name = "checkBoxMNLPH31D7";
+            this.checkBoxMNLPH31D7.Size = new System.Drawing.Size(99, 17);
+            this.checkBoxMNLPH31D7.TabIndex = 15;
+            this.checkBoxMNLPH31D7.Text = "MNLPH31D7";
+            this.checkBoxMNLPH31D7.UseVisualStyleBackColor = true;
             // 
             // checkBoxMNLPH3502
             // 
@@ -300,6 +331,7 @@
             this.checkBoxMNLPH210M.TabIndex = 11;
             this.checkBoxMNLPH210M.Text = "MNLPH210M";
             this.checkBoxMNLPH210M.UseVisualStyleBackColor = true;
+            this.checkBoxMNLPH210M.CheckedChanged += new System.EventHandler(this.checkBoxMNLPH210M_CheckedChanged);
             // 
             // btnClear
             // 
@@ -455,6 +487,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -735,6 +768,97 @@
             // 
             this.columnHeader36.Text = "TRNC";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.lstView31D7);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(727, 426);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "MNLPH-31D7";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // lstView31D7
+            // 
+            this.lstView31D7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(219)))), ((int)(((byte)(233)))));
+            this.lstView31D7.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader37,
+            this.columnHeader38,
+            this.columnHeader39,
+            this.columnHeader40,
+            this.columnHeader41,
+            this.columnHeader42,
+            this.columnHeader43,
+            this.columnHeader44,
+            this.columnHeader45,
+            this.columnHeader46,
+            this.columnHeader47,
+            this.columnHeader48});
+            this.lstView31D7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstView31D7.Location = new System.Drawing.Point(3, 3);
+            this.lstView31D7.Name = "lstView31D7";
+            this.lstView31D7.Size = new System.Drawing.Size(721, 420);
+            this.lstView31D7.TabIndex = 2;
+            this.lstView31D7.UseCompatibleStateImageBehavior = false;
+            this.lstView31D7.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader37
+            // 
+            this.columnHeader37.Text = "SEQ NO";
+            // 
+            // columnHeader38
+            // 
+            this.columnHeader38.Text = "A/L";
+            this.columnHeader38.Width = 47;
+            // 
+            // columnHeader39
+            // 
+            this.columnHeader39.Text = "DOC NO";
+            this.columnHeader39.Width = 109;
+            // 
+            // columnHeader40
+            // 
+            this.columnHeader40.Text = "AMOUNT";
+            this.columnHeader40.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader40.Width = 93;
+            // 
+            // columnHeader41
+            // 
+            this.columnHeader41.Text = "TAX";
+            this.columnHeader41.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // columnHeader42
+            // 
+            this.columnHeader42.Text = "FEE";
+            this.columnHeader42.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // columnHeader43
+            // 
+            this.columnHeader43.Text = "COMM";
+            this.columnHeader43.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // columnHeader44
+            // 
+            this.columnHeader44.Text = "FP";
+            // 
+            // columnHeader45
+            // 
+            this.columnHeader45.Text = "PAX NAME";
+            this.columnHeader45.Width = 108;
+            // 
+            // columnHeader46
+            // 
+            this.columnHeader46.Text = "AS";
+            // 
+            // columnHeader47
+            // 
+            this.columnHeader47.Text = "RELOC";
+            // 
+            // columnHeader48
+            // 
+            this.columnHeader48.Text = "TRNC";
+            // 
             // btnAmadeusMode
             // 
             this.btnAmadeusMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(94)))), ((int)(((byte)(186)))));
@@ -868,6 +992,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExportToExcel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDownloadManual)).EndInit();
             this.ResumeLayout(false);
@@ -952,5 +1077,20 @@
         private System.Windows.Forms.CheckBox checkBoxMNLPH3502;
         private System.Windows.Forms.CheckBox checkBoxMNLPH3501;
         private System.Windows.Forms.CheckBox checkBoxMNLPH210M;
+        private System.Windows.Forms.CheckBox checkBoxMNLPH31D7;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.ListView lstView31D7;
+        private System.Windows.Forms.ColumnHeader columnHeader37;
+        private System.Windows.Forms.ColumnHeader columnHeader38;
+        private System.Windows.Forms.ColumnHeader columnHeader39;
+        private System.Windows.Forms.ColumnHeader columnHeader40;
+        private System.Windows.Forms.ColumnHeader columnHeader41;
+        private System.Windows.Forms.ColumnHeader columnHeader42;
+        private System.Windows.Forms.ColumnHeader columnHeader43;
+        private System.Windows.Forms.ColumnHeader columnHeader44;
+        private System.Windows.Forms.ColumnHeader columnHeader45;
+        private System.Windows.Forms.ColumnHeader columnHeader46;
+        private System.Windows.Forms.ColumnHeader columnHeader47;
+        private System.Windows.Forms.ColumnHeader columnHeader48;
     }
 }

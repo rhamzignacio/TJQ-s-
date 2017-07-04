@@ -23,6 +23,7 @@ namespace TJQ
         List<TJQModel> list210M = new List<TJQModel>();
         List<TJQModel> list3501 = new List<TJQModel>();
         List<TJQModel> list3502 = new List<TJQModel>();
+        List<TJQModel> list31D7 = new List<TJQModel>();
 
         private void MenuMove(MouseEventArgs e)
         {
@@ -193,6 +194,50 @@ namespace TJQ
                         if (cmbBoxType.Text == "BETWEEN")
                         {
                             endDate = dateTimeEnd.Text;
+                        }
+
+                        if (checkBoxMNLPH31D7.Checked)
+                        {
+                            //=====================MNLPH31D7=========================
+                            lstView31D7.Items.Clear();
+
+                            Normal("Retrieving data from Amadeus Selling Platform - MNLPH31D7");
+
+                            list31D7 = A1.GetMNLPH31D(dateTimeStart.Text, endDate, currency);
+
+                            list31D7.ForEach(item =>
+                            {
+                                ListViewItem lvi = new ListViewItem(item.SEQNO);
+
+                                lvi.SubItems.Add(item.AL);
+
+                                lvi.SubItems.Add(item.DOCNO);
+
+                                lvi.SubItems.Add(item.AMOUNT);
+
+                                lvi.SubItems.Add(item.TAX);
+
+                                lvi.SubItems.Add(item.FEE);
+
+                                lvi.SubItems.Add(item.COMM);
+
+                                lvi.SubItems.Add(item.FP);
+
+                                lvi.SubItems.Add(item.PAXNAME);
+
+                                lvi.SubItems.Add(item.AS);
+
+                                lvi.SubItems.Add(item.RELOC);
+
+                                lvi.SubItems.Add(item.TRNC);
+
+                                if (colorCtr % 2 == 0)
+                                    lvi.BackColor = Color.White;
+
+                                colorCtr++;
+
+                                lstView31D7.Items.Add(lvi);
+                            });
                         }
 
                         if (checkBoxMNLPH210M.Checked)
@@ -368,7 +413,7 @@ namespace TJQ
                     else if (cmbBoxType.Text == "BETWEEN")
                         temp = cmbBoxType.Text + " " + dateTimeStart.Text + " - " + dateTimeEnd.Text;
 
-                    if (excel.Export(list210M, list3501, list3502, temp, saveDialog.FileName))
+                    if (excel.Export(list210M, list3501, list3502, list31D7, temp, saveDialog.FileName))
                     {
                         Success("Done exporting to excel");
                     }
@@ -497,6 +542,11 @@ namespace TJQ
         private void lblVersion_Click(object sender, EventArgs e)
         {
        
+        }
+
+        private void checkBoxMNLPH210M_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

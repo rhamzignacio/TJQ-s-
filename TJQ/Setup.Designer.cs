@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Setup));
             this.topPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -60,13 +61,21 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.lblMessage = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.radBtnDefault31D7 = new System.Windows.Forms.RadioButton();
+            this.btnShowPassword31D7 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtBoxPassword31D7 = new System.Windows.Forms.TextBox();
+            this.txtBoxUsername31D7 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.topPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // topPanel
@@ -82,6 +91,16 @@
             this.topPanel.Size = new System.Drawing.Size(330, 29);
             this.topPanel.TabIndex = 1;
             this.topPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.topPanel_MouseDown);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TJQ.Properties.Resources._1478675916_stealth_fighter_jet;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -191,7 +210,7 @@
             this.txtBoxPassword210M.BackColor = System.Drawing.Color.White;
             this.txtBoxPassword210M.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPassword210M.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtBoxPassword210M.Location = new System.Drawing.Point(121, 25);
+            this.txtBoxPassword210M.Location = new System.Drawing.Point(143, 26);
             this.txtBoxPassword210M.Name = "txtBoxPassword210M";
             this.txtBoxPassword210M.Size = new System.Drawing.Size(148, 20);
             this.txtBoxPassword210M.TabIndex = 2;
@@ -395,7 +414,7 @@
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(12, 297);
+            this.btnSave.Location = new System.Drawing.Point(9, 376);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(87, 23);
             this.btnSave.TabIndex = 11;
@@ -408,7 +427,7 @@
             this.panelBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
             this.panelBottom.Controls.Add(this.lblMessage);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(0, 338);
+            this.panelBottom.Location = new System.Drawing.Point(0, 406);
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Size = new System.Drawing.Size(330, 23);
             this.panelBottom.TabIndex = 12;
@@ -423,22 +442,102 @@
             this.lblMessage.TabIndex = 2;
             this.lblMessage.Text = "Error Message";
             // 
-            // pictureBox1
+            // panel4
             // 
-            this.pictureBox1.Image = global::TJQ.Properties.Resources._1478675916_stealth_fighter_jet;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(219)))), ((int)(((byte)(233)))));
+            this.panel4.Controls.Add(this.radBtnDefault31D7);
+            this.panel4.Controls.Add(this.btnShowPassword31D7);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Controls.Add(this.txtBoxPassword31D7);
+            this.panel4.Controls.Add(this.txtBoxUsername31D7);
+            this.panel4.Controls.Add(this.label13);
+            this.panel4.Location = new System.Drawing.Point(9, 299);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(306, 69);
+            this.panel4.TabIndex = 13;
+            // 
+            // radBtnDefault31D7
+            // 
+            this.radBtnDefault31D7.AutoSize = true;
+            this.radBtnDefault31D7.Location = new System.Drawing.Point(244, 3);
+            this.radBtnDefault31D7.Name = "radBtnDefault31D7";
+            this.radBtnDefault31D7.Size = new System.Drawing.Size(59, 17);
+            this.radBtnDefault31D7.TabIndex = 16;
+            this.radBtnDefault31D7.TabStop = true;
+            this.radBtnDefault31D7.Text = "Default";
+            this.radBtnDefault31D7.UseVisualStyleBackColor = true;
+            this.radBtnDefault31D7.CheckedChanged += new System.EventHandler(this.radBtnDefault31D7_CheckedChanged);
+            this.radBtnDefault31D7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.radBtnDefault31D7_MouseDown);
+            // 
+            // btnShowPassword31D7
+            // 
+            this.btnShowPassword31D7.BackColor = System.Drawing.SystemColors.Window;
+            this.btnShowPassword31D7.BackgroundImage = global::TJQ.Properties.Resources._1478511171_eye;
+            this.btnShowPassword31D7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnShowPassword31D7.FlatAppearance.BorderSize = 0;
+            this.btnShowPassword31D7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowPassword31D7.ForeColor = System.Drawing.Color.White;
+            this.btnShowPassword31D7.Location = new System.Drawing.Point(269, 26);
+            this.btnShowPassword31D7.Name = "btnShowPassword31D7";
+            this.btnShowPassword31D7.Size = new System.Drawing.Size(22, 18);
+            this.btnShowPassword31D7.TabIndex = 15;
+            this.btnShowPassword31D7.UseVisualStyleBackColor = false;
+            this.btnShowPassword31D7.Click += new System.EventHandler(this.btnShowPassword31D7_Click);
+            this.btnShowPassword31D7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnShowPassword31D7_MouseDown);
+            this.btnShowPassword31D7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnShowPassword31D7_MouseUp);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(169, 48);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 13);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Password";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(32, 48);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(55, 13);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "Username";
+            // 
+            // txtBoxPassword31D7
+            // 
+            this.txtBoxPassword31D7.Location = new System.Drawing.Point(121, 25);
+            this.txtBoxPassword31D7.Name = "txtBoxPassword31D7";
+            this.txtBoxPassword31D7.Size = new System.Drawing.Size(148, 20);
+            this.txtBoxPassword31D7.TabIndex = 2;
+            this.txtBoxPassword31D7.UseSystemPasswordChar = true;
+            // 
+            // txtBoxUsername31D7
+            // 
+            this.txtBoxUsername31D7.Location = new System.Drawing.Point(8, 25);
+            this.txtBoxUsername31D7.Name = "txtBoxUsername31D7";
+            this.txtBoxUsername31D7.Size = new System.Drawing.Size(107, 20);
+            this.txtBoxUsername31D7.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.label13.Location = new System.Drawing.Point(5, 6);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(95, 16);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "MNLPH31D7";
             // 
             // Setup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
-            this.ClientSize = new System.Drawing.Size(330, 361);
+            this.ClientSize = new System.Drawing.Size(330, 429);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel3);
@@ -453,6 +552,7 @@
             this.Load += new System.EventHandler(this.Setup_Load);
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -461,7 +561,8 @@
             this.panel3.PerformLayout();
             this.panelBottom.ResumeLayout(false);
             this.panelBottom.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -500,5 +601,13 @@
         private System.Windows.Forms.RadioButton radBtnDefault3501;
         private System.Windows.Forms.RadioButton radBtnDefault3502;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.RadioButton radBtnDefault31D7;
+        private System.Windows.Forms.Button btnShowPassword31D7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtBoxPassword31D7;
+        private System.Windows.Forms.TextBox txtBoxUsername31D7;
+        private System.Windows.Forms.Label label13;
     }
 }

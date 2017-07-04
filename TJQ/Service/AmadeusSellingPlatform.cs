@@ -35,7 +35,7 @@ namespace TJQ
                 {
                     if (errorString.Contains("REQUESTED DISPLAY NOT SCROLLABLE") || errorString.Contains("NO DATA FOUND") || errorString.Contains("TRANSACTION CODE NOT SUPPORTED") ||
                         errorString.Contains("CHECK TRANSACTION CODE"))
-                            return;
+                        return;
 
                     if (temp[temp.Count - 1] == checkTemp[checkTemp.Count - 1])
                     {
@@ -68,7 +68,7 @@ namespace TJQ
                     {
                         var checkIfDupplicate = temp.FirstOrDefault(r => r.Contains(response.GetLineFromBuffer(ref ctr)));
 
-                        if(checkIfDupplicate == null)
+                        if (checkIfDupplicate == null)
                             temp.Add(response.GetLineFromBuffer(ref ctr));
                         else
                             checkTemp.Add(response.GetLineFromBuffer(ref ctr));
@@ -80,6 +80,43 @@ namespace TJQ
                 }
             }
         }
+
+        public List<TJQModel> GetMNLPH31D(string startDate = "", string endDate = "", string currency = "")
+        {
+            List<TJQModel> TJQList = new List<TJQModel>();
+
+            temp = new List<string>(); //Clear temp string
+
+            JumpOfficeID("MNLPH31D7");
+
+            objSession.Send("JI" + Properties.Settings.Default.Username31D7 + "-" + Properties.Settings.Default.Password31D7);
+
+            GetTJQData(startDate, endDate, currency);
+
+            temp.ForEach(item =>
+            {
+                TJQModel tempTJQ = new TJQModel
+                {
+                    SEQNO = item.Substring(0, 5).Replace(" ", ""),
+                    AL = item.Substring(7, 3).Replace(" ", ""),
+                    DOCNO = item.Substring(11, 10).Replace(" ", ""),
+                    AMOUNT = item.Substring(21, 10).Replace(" ", ""),
+                    TAX = item.Substring(31, 10).Replace(" ", ""),
+                    FEE = item.Substring(41, 7).Replace(" ", ""),
+                    COMM = item.Substring(48, 5).Replace(" ", ""),
+                    FP = item.Substring(53, 2).Replace(" ", ""),
+                    PAXNAME = item.Substring(56, 8).Replace(" ", ""),
+                    AS = item.Substring(65, 2).Replace(" ", ""),
+                    RELOC = item.Substring(68, 6).Replace(" ", ""),
+                    TRNC = item.Substring(75, 5).Replace(" ", "")
+                };
+
+                TJQList.Add(tempTJQ);
+            });
+
+            return TJQList;
+        }
+            
 
         public List<TJQModel> GetMNLPH210M(string startDate = "", string endDate = "", string currency = "")
         {

@@ -33,6 +33,12 @@
       <setting name="DefaultOID" serializeAs="String">
         <value />
       </setting>
+      <setting name="Username31D7" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="Password31D7" serializeAs="String">
+        <value />
+      </setting>
     </TJQ.Properties.Settings>
   </userSettings>
   <connectionStrings>

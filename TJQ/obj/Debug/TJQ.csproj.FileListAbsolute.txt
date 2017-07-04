@@ -1,43 +1,20 @@
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\obj\Debug\TJQ.MainWindow.resources
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\obj\Debug\TJQ.Properties.Resources.resources
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\obj\Debug\TJQ.csproj.GenerateResource.Cache
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\obj\Debug\TJQ.Setup.resources
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\obj\Debug\TJQ.csprojResolveAssemblyReference.cache
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\bin\Debug\EntityFramework.dll
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\bin\Debug\EntityFramework.xml
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\bin\Debug\TJQ(s).exe.config
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\bin\Debug\TJQ(s).exe
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\bin\Debug\TJQ(s).pdb
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\obj\Debug\TJQ(s).exe
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\obj\Debug\TJQ(s).pdb
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\obj\Debug\TJQ.ConfirmationWindow.resources
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\bin\Debug\TJQ(s).exe.manifest
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\bin\Debug\TJQ(s).application
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\obj\Debug\TJQ(s).TrustInfo.xml
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\obj\Debug\TJQ(s).exe.manifest
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ\TJQ\obj\Debug\TJQ(s).application
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\bin\Debug\TJQ(s).exe.config
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\obj\Debug\TJQ(s).exe
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\obj\Debug\TJQ(s).pdb
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\bin\Debug\TJQ(s).exe.manifest
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\bin\Debug\TJQ(s).application
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\bin\Debug\TJQ(s).exe
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\bin\Debug\TJQ(s).pdb
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\bin\Debug\EntityFramework.dll
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\bin\Debug\EntityFramework.xml
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\obj\Debug\TJQ.csprojResolveAssemblyReference.cache
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\obj\Debug\TJQ.ConfirmationWindow.resources
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\obj\Debug\TJQ.MainWindow.resources
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\obj\Debug\TJQ.Properties.Resources.resources
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\obj\Debug\TJQ.Setup.resources
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\obj\Debug\TJQ.csproj.GenerateResource.Cache
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\obj\Debug\TJQ(s).TrustInfo.xml
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\obj\Debug\TJQ(s).exe.manifest
-C:\Users\philscan\Google Drive\Philscan Travel and Tours\TJQ(s)\TJQ\obj\Debug\TJQ(s).application
-C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\bin\Debug\TJQ(s).exe.config
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\obj\Debug\TJQ.ConfirmationWindow.resources
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\obj\Debug\TJQ.MainWindow.resources
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\obj\Debug\TJQ.Properties.Resources.resources
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\obj\Debug\TJQ.Setup.resources
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\obj\Debug\TJQ.csproj.GenerateResource.Cache
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\obj\Debug\TJQ(s).TrustInfo.xml
 C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\obj\Debug\TJQ(s).exe
 C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\obj\Debug\TJQ(s).pdb
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\bin\Debug\TJQ(s).exe.config
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\bin\Debug\TJQ(s).exe.manifest
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\bin\Debug\TJQ(s).application
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\bin\Debug\TJQ(s).exe
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\bin\Debug\TJQ(s).pdb
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\bin\Debug\EntityFramework.dll
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\bin\Debug\EntityFramework.xml
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\obj\Debug\TJQ(s).exe.manifest
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\obj\Debug\TJQ(s).application
+C:\Users\philscan\Documents\Repository\TJQ-s-\TJQ\obj\Debug\TJQ.csprojResolveAssemblyReference.cache

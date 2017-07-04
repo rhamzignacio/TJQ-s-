@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TJQ(s).exe" size="1212864">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TJQ(s).exe" size="1221016">
       <assemblyIdentity name="TJQ(s)" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FP/iXILjhq5RQP813gzCdnIRzgDy81GaNNHyDvliLsM=</dsig:DigestValue>
+        <dsig:DigestValue>TunCKEs4hW+mfwAjnr1TlYbpVK/X86F8pxJLApqEjOw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -213,13 +213,13 @@
       <dsig:DigestValue>qTHSghVSkX5GT+ofwl+yPPI5dRzv8K7QVZnAS+ghPYs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TJQ(s).exe.config" size="2681">
+  <file name="TJQ(s).exe.config" size="2871">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>59MKjQbEJ7n9hlg72PR5xrTffsjqyLogYrQTbATyIjc=</dsig:DigestValue>
+      <dsig:DigestValue>ssGDSpItrl3ZxIRJP7S5UB9+PlUQ9EeHGpEZ126sboY=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

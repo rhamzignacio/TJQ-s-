@@ -26,11 +26,11 @@
     <InstallUrl>http://192.168.0.3:1010/</InstallUrl>
     <ProductName>TJQ%28s%29</ProductName>
     <PublisherName>Philscan Travel and Tours</PublisherName>
-    <MinimumRequiredVersion>1.2.0.0</MinimumRequiredVersion>
+    <MinimumRequiredVersion>2.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.2.0.0</ApplicationVersion>
+    <ApplicationVersion>2.0.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -62,7 +62,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>701ADF2A89ABD5A6AAABB05FCBACD9B42074F7D7</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>576A2B5AAD513F7F16306FED5622A5D00A199A43</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>

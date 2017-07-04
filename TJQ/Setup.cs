@@ -71,6 +71,21 @@ namespace TJQ
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            //Save login for 31D7
+
+            if(txtBoxUsername31D7.Text != "" && txtBoxPassword31D7.Text != "")
+            {
+                Properties.Settings.Default.Username31D7 = txtBoxUsername31D7.Text;
+
+                Properties.Settings.Default.Password31D7 = txtBoxPassword31D7.Text;
+            }
+            else
+            {
+                Error("Please complete login info for MNLPH31D7");
+
+                return;
+            }
+
             //Save login for 210M
             if(txtBoxUsername210M.Text != "" && txtBoxPassword210M.Text != "")
             {
@@ -78,7 +93,7 @@ namespace TJQ
 
                 Properties.Settings.Default.Password210M = txtBoxPassword210M.Text;
             }
-            else if(txtBoxPassword210M.Text != "" || txtBoxPassword210M.Text != "")
+            else
             {
                 Error("Please complete login info for MNLPH210M");
 
@@ -92,7 +107,7 @@ namespace TJQ
 
                 Properties.Settings.Default.Password3501 = txtBoxPassword3501.Text;
             }
-            else if (txtBoxPassword3501.Text != "" || txtBoxPassword3501.Text != "")
+            else
             {
                 Error("Please complete login info for MNLPH3501");
 
@@ -106,7 +121,7 @@ namespace TJQ
 
                 Properties.Settings.Default.Password3502 = txtBoxPassword3502.Text;
             }
-            else if (txtBoxPassword3502.Text != "" || txtBoxPassword3502.Text != "")
+            else
             {
                 Error("Please complete login info for MNLPH3502");
 
@@ -119,6 +134,8 @@ namespace TJQ
                 Properties.Settings.Default.DefaultOID = "MNLPH3501";
             else if (radBtnDefault3502.Checked)
                 Properties.Settings.Default.DefaultOID = "MNLPH3502";
+            else if (radBtnDefault31D7.Checked)
+                Properties.Settings.Default.DefaultOID = "MNLPH31D7";
             else
             {
                 Error("Please select default office ID");
@@ -201,6 +218,31 @@ namespace TJQ
         private void Setup_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnShowPassword31D7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnShowPassword31D7_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtBoxPassword31D7.UseSystemPasswordChar = false;
+        }
+
+        private void btnShowPassword31D7_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtBoxPassword31D7.UseSystemPasswordChar = true;
+        }
+
+        private void radBtnDefault31D7_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void radBtnDefault31D7_CheckedChanged(object sender, EventArgs e)
+        {
+            radBtnDefault210M.Checked = radBtnDefault3501.Checked = radBtnDefault3502.Checked = false;
         }
     }
 }
