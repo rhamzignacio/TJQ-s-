@@ -246,7 +246,7 @@
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(54, 13);
             this.lblVersion.TabIndex = 0;
-            this.lblVersion.Text = "2.0";
+            this.lblVersion.Text = "2.2";
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.lblVersion.Click += new System.EventHandler(this.lblVersion_Click);
             // 

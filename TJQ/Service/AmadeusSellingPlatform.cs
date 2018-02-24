@@ -64,7 +64,8 @@ namespace TJQ
                 {
                     if (response.GetLineFromBuffer(ref ctr).ToString().Contains("TKTT") || response.GetLineFromBuffer(ref ctr).ToString().Contains("CANN") ||
                         response.GetLineFromBuffer(ref ctr).ToString().Contains("RFND") || response.GetLineFromBuffer(ref ctr).ToString().Contains("CANX") ||
-                        response.GetLineFromBuffer(ref ctr).ToString().Contains("CNJ") || response.GetLineFromBuffer(ref ctr).ToString().Contains("EMDS"))
+                        response.GetLineFromBuffer(ref ctr).ToString().Contains("CNJ") || response.GetLineFromBuffer(ref ctr).ToString().Contains("EMDS") ||
+                        response.GetLineFromBuffer(ref ctr).ToString().Contains("RFN0"))
                     {
                         var checkIfDupplicate = temp.FirstOrDefault(r => r.Contains(response.GetLineFromBuffer(ref ctr)));
 
